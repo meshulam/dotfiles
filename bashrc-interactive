@@ -1,0 +1,14 @@
+
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# If this is an xterm set the title to user@host:dir
+PS1="[\u@\h:\w] "
+
+
+# Aliases are in a separate file.
+[ -f "./bashrc_aliases" ]  && . ./bashrc_aliases
+
