@@ -18,9 +18,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #sudo scutil --set LocalHostName "0x6D746873"
 #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
 
-# Set standby delay to 24 hours (default is 1 hour)
-#sudo pmset -a standbydelay 86400
-
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
@@ -111,6 +108,22 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+###############################################################################
+# Power management (for laptops)                                              #
+###############################################################################
+
+# Settings for powered operation
+sudo pmset -a sleep 0             # never system sleep
+sudo pmset -a displaysleep 30
+sudo pmset -a standbydelay 21600   # hibernate after 6 hours of sleep
+
+# Settings for battery power
+sudo pmset -b sleep 15
+sudo pmset -b displaysleep 10
+sudo pmset -b standbydelay 1800    # hibernate after 30 minutes of sleep
+
+
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
@@ -537,7 +550,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 #open "${HOME}/init/Mathias.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
-#defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Time Machine                                                                #
