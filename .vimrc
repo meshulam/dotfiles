@@ -1,3 +1,6 @@
+" load pathogen bundles
+execute pathogen#infect('~/.vim/bundle/{}')
+
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -26,6 +29,8 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
+" Allow unsaved changes in hidden buffers
+set hidden
 " Respect modeline in files
 set modeline
 set modelines=4
@@ -35,7 +40,12 @@ set secure
 " Enable line numbers
 set number
 " Enable syntax highlighting
-syntax on
+syntax enable
+" Set colorscheme
+"let g:solarized_termcolors=16
+call togglebg#map("<F5>")
+set background=dark
+colorscheme solarized
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
@@ -70,6 +80,27 @@ set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
+" MiniBufExplorer keybindings
+" Cycle tabs in current window w/ctrl-TAB
+"noremap <C-TAB>   :MBEbn<CR>
+"noremap <C-S-TAB> :MBEbp<CR>
+map <Leader>t :MBEToggle<cr>
+
+" control + vim direction key to navigate windows
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l
+
+noremap <C-N>     :MBEbn<cr>
+noremap <C-B>     :MBEbp<cr>
+noremap <C-F>     :MBEbf<cr>
+noremap <C-R>     :MBEbb<cr>
+noremap <C-C>     :MBEbd<cr>
+
+" Clear search highlighting with ESC
+nnoremap <silent> <leader>/ :noh<cr><esc>
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -81,6 +112,19 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+	project_base_dir = os.environ['VIRTUAL_ENV']
+	sys.path.insert(0, project_base_dir)
+	activate_this = os.path.join(project_base_dir,
+	'bin/activate_this.py')
+	execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " Automatic commands
 if has("autocmd")
