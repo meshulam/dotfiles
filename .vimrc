@@ -1,5 +1,7 @@
 " load pathogen bundles
-execute pathogen#infect('~/.vim/bundle/{}')
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
 
 " Make Vim more useful
 set nocompatible
@@ -49,7 +51,9 @@ colorscheme solarized
 " Highlight current line
 set cursorline
 " Make tabs as wide as two spaces
-set tabstop=2
+set tabstop=4
+" Use spaces for tabs
+set expandtab
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
@@ -84,7 +88,6 @@ set scrolloff=3
 " Cycle tabs in current window w/ctrl-TAB
 "noremap <C-TAB>   :MBEbn<CR>
 "noremap <C-S-TAB> :MBEbp<CR>
-map <Leader>t :MBEToggle<cr>
 
 " control + vim direction key to navigate windows
 noremap <C-J>     <C-W>j
@@ -92,10 +95,8 @@ noremap <C-K>     <C-W>k
 noremap <C-H>     <C-W>h
 noremap <C-L>     <C-W>l
 
-noremap <C-N>     :MBEbn<cr>
-noremap <C-B>     :MBEbp<cr>
-noremap <C-F>     :MBEbf<cr>
-noremap <C-R>     :MBEbb<cr>
+noremap <C-F>     :MBEbn<cr>
+noremap <C-D>     :MBEbp<cr>
 noremap <C-C>     :MBEbd<cr>
 
 " Clear search highlighting with ESC
@@ -113,23 +114,6 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-" Add the virtualenv's site-packages to vim path
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-	project_base_dir = os.environ['VIRTUAL_ENV']
-	sys.path.insert(0, project_base_dir)
-	activate_this = os.path.join(project_base_dir,
-	'bin/activate_this.py')
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-" Automatic commands
-if has("autocmd")
-	" Enable file type detection
-	filetype indent plugin on
-	" Treat .json files as .js
-	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
-endif
+let g:pymode_rope = 0
+let g:pymode_lint_ignore = "E501,W"
+let g:pymode_folding = 0
