@@ -115,5 +115,5 @@ noremap <leader>ss :call StripWhitespace()<CR>
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 let g:pymode_rope = 0
-let g:pymode_lint_ignore = "E501,W"
+let g:pymode_lint_ignore = "E501,W,E302,E126"
 let g:pymode_folding = 0
