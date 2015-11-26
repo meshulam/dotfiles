@@ -41,16 +41,21 @@ set exrc
 set secure
 " Enable line numbers
 set number
+
 " Enable syntax highlighting
 syntax enable
+
 " Set colorscheme
-"let g:solarized_termcolors=16
-call togglebg#map("<F5>")
+let g:solarized_termcolors=16
+let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
+
+call togglebg#map("<F5>")
+
 " Highlight current line
 set cursorline
-" Make tabs as wide as two spaces
+" Make tabs as wide as four spaces
 set tabstop=4
 " Use spaces for tabs
 set expandtab
