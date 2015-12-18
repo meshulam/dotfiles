@@ -51,16 +51,17 @@ let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 
-call togglebg#map("<F5>")
-
 " Highlight current line
 set cursorline
 " Make tabs as wide as four spaces
 set tabstop=4
+set shiftwidth=4
+
 " Use spaces for tabs
 set expandtab
+
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,nbsp:_
+set listchars=tab:▸\ ,trail:·
 set list
 " Highlight searches
 set hlsearch
