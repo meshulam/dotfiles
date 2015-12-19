@@ -1,8 +1,9 @@
-# Actual configs are kept in FILES.
+# Files in the root of the $ZSH directory are sourced directly.
+# Files in subdirs may have other purposes.
 
-export ZSH_CONFIG_DIR=~/cfg/zsh
+ZSH=~/cfg/zsh
 
-GLOB="${ZSH_CONFIG_DIR}/*"
+GLOB="${ZSH}/*"
 
 for sourcefile in $~GLOB
 do

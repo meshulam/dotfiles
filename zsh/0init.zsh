@@ -1,3 +1,6 @@
+
+fpath=($ZSH/completions $fpath)
+
 # Autocomplete stuff
 autoload -Uz compinit && compinit
 

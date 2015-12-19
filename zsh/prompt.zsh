@@ -1,13 +1,12 @@
 # http://zshwiki.org/home/config/prompt
 # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Other-Functions
 
-source "$ZSH_CONFIG_DIR/functions/git-prompt.sh"
+source "$ZSH/includes/git-prompt.sh"
 
 # $PS1 should undergo parameter expansion
 setopt prompt_subst
 
-
-# Readable aliases
+# Readable aliases for prompt format string
 local user="%n"
 local host="%m"
 local current_dir="%~"
