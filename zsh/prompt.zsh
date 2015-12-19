@@ -23,8 +23,12 @@ GIT_PS1_SHOWCOLORHINTS=yeah
 GIT_PS1_SHOWUNTRACKEDFILES=yes
 
 precmd () {
+    # Color aliases so that the % chars aren't in the string passed to printf
+    wh='%F{white}'
+    rs='%f'
+
     # Use the form of __git_ps1 that sets the prompt itself because it's
     # allegedly faster
-    __git_ps1 "$pre_git_prompt" "$post_git_prompt" ' on ${wh}git${rc}:%s'
+    __git_ps1 "$pre_git_prompt" "$post_git_prompt" ' on ${wh}git${rs}:%s'
 }
 
