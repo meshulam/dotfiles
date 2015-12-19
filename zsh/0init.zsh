@@ -1,4 +1,3 @@
-
 fpath=($ZSH/completions $fpath)
 
 # Autocomplete stuff
