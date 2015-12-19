@@ -1,0 +1,30 @@
+# http://zshwiki.org/home/config/prompt
+# http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Other-Functions
+
+source "$ZSH_CONFIG_DIR/functions/git-prompt.sh"
+
+# $PS1 should undergo parameter expansion
+setopt prompt_subst
+
+
+# Readable aliases
+local user="%n"
+local host="%m"
+local current_dir="%~"
+
+# Color code cheat sheet: %F{colorname} sets foreground to that color; %f resets.
+
+local pre_git_prompt='%F{cyan}${user}@${host}%F{white}:%f${current_dir}'
+local post_git_prompt='
+%F{cyan}%# %f'
+
+GIT_PS1_SHOWDIRTYSTATE=yep
+GIT_PS1_SHOWCOLORHINTS=yeah
+GIT_PS1_SHOWUNTRACKEDFILES=yes
+
+precmd () {
+    # Use the form of __git_ps1 that sets the prompt itself because it's
+    # allegedly faster
+    __git_ps1 "$pre_git_prompt" "$post_git_prompt" ' on ${wh}git${rc}:%s'
+}
+
