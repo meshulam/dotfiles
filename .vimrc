@@ -16,7 +16,7 @@ set gdefault
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 " Change mapleader
-let mapleader=","
+let mapleader=" "
 " Centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
@@ -90,10 +90,20 @@ set linebreak
 " Enter inserts a newline from normal mode
 nnoremap <cr> o<esc>
 
-" MiniBufExplorer keybindings
-" Cycle tabs in current window w/ctrl-TAB
-"noremap <C-TAB>   :MBEbn<CR>
-"noremap <C-S-TAB> :MBEbp<CR>
+" bring up buffer list and waits for number input
+nnoremap <leader>l :ls<CR>:b<Space>
+
+" Navigate wrapped lines as if they were real lines
+nnoremap k gk
+nnoremap j gj
+vnoremap k gk
+vnoremap j gj
+
+" use jj to exit insert mode
+inoremap jj <esc>
+
+nnoremap <leader>h :help<space>
+nnoremap <leader>d :bdelete<space>
 
 " control + vim direction key to navigate windows
 noremap <C-J>     <C-W>j
@@ -101,12 +111,8 @@ noremap <C-K>     <C-W>k
 noremap <C-H>     <C-W>h
 noremap <C-L>     <C-W>l
 
-noremap <C-F>     :MBEbn<cr>
-noremap <C-D>     :MBEbp<cr>
-noremap <C-C>     :MBEbd<cr>
-
-" Clear search highlighting with ESC -- doesn't work?
-" nnoremap <silent> <leader>/ :noh<cr><esc>
+" Clear search highlighting
+nnoremap <silent> <leader>/ :noh<cr><esc>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()

@@ -10,10 +10,12 @@ setopt prompt_subst
 local user="%n"
 local host="%m"
 local current_dir="%~"
+local sh_jobs="%(1j. [%j].)"     # only print jobs if there's at least one
 
 # Color code cheat sheet: %F{colorname} sets foreground to that color; %f resets.
 
 local pre_git_prompt='%F{cyan}${user}@${host}%F{white}:%f${current_dir}'
+pre_git_prompt="$pre_git_prompt%F{yellow}${sh_jobs}%f"
 local post_git_prompt='
 %F{cyan}%# %f'
 
