@@ -1,7 +1,9 @@
 # Files in the root of the $ZSH directory are sourced directly.
 # Files in subdirs may have other purposes.
 
+# Environment vars that may be useful in this config. Should these get exported?
 ZSH=~/cfg/zsh
+OS=$(uname -a)      # e.g. Darwin, Linux
 
 GLOB="${ZSH}/*"
 

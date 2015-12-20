@@ -1,13 +1,22 @@
+###  Cool addons  ###
+source "$ZSH/addons/alias-tips/alias-tips.plugin.zsh"
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="** Alias tip: "
 
+###  #neveragain  ###
+alias vi=vim
 
+###  cd aliases  ###
+alias ..='cd ..'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+alias cd/='cd /'
 
 ###  OSX-specific aliases  ###
-
 alias brews='brew list -1'
 
-
 ###  Git aliases  ###
-
 alias g='git'
 alias gaa='git add --all'
 alias gcm='git commit -a -m'

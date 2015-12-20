@@ -51,8 +51,9 @@ set shiftwidth=4
 set expandtab
 
 " Show “invisible” characters
-" set listchars=tab:▸\ ,trail:·
-" set list
+set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
+set list
+
 " Highlight searches
 set hlsearch
 " Ignore case of searches
@@ -71,6 +72,23 @@ set showmode
 set title
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
+
+" When creating new windows, put them below or right of the active window
+set splitbelow
+set splitright
+
+" Re-read files from the FS if they change and we don't have pending modifications
+set autoread
+
+" Round to a column multiple when indenting instead of using a constant number
+" of spaces
+set shiftround
+
+" Break long lines on whitespace
+set linebreak
+
+" Enter inserts a newline from normal mode
+nnoremap <cr> o<esc>
 
 " MiniBufExplorer keybindings
 " Cycle tabs in current window w/ctrl-TAB
@@ -105,3 +123,4 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 let g:pymode_rope = 0
 let g:pymode_lint_ignore = "E501,W,E302,E126,E226"
 let g:pymode_folding = 0
+
