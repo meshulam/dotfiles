@@ -1,3 +1,8 @@
+# System- and app-defined paths
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
+fi
+
 # This is how completions get loaded (among other things)
 fpath=($ZSH/completions $fpath)
 
@@ -11,3 +16,5 @@ autoload -Uz colors && colors
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH/cache/
 
+setopt no_list_beep		# Don't beep on ambiguous completion
+setopt correct			# Correct command spelling

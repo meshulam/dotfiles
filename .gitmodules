@@ -16,6 +16,6 @@
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
-[submodule "zsh/addons/alias-tips"]
-	path = zsh/addons/alias-tips
-	url = https://github.com/djui/alias-tips.git
+[submodule ".vim/bundle/rust.vim"]
+	path = .vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git

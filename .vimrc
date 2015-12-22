@@ -99,11 +99,12 @@ nnoremap j gj
 vnoremap k gk
 vnoremap j gj
 
-" use jj to exit insert mode
-inoremap jj <esc>
+" use jk to exit insert mode
+inoremap jk <esc>
 
 nnoremap <leader>h :help<space>
 nnoremap <leader>d :bdelete<space>
+nnoremap <leader>s :w<cr>
 
 " control + vim direction key to navigate windows
 noremap <C-J>     <C-W>j
@@ -112,7 +113,7 @@ noremap <C-H>     <C-W>h
 noremap <C-L>     <C-W>l
 
 " Clear search highlighting
-nnoremap <silent> <leader>/ :noh<cr><esc>
+nnoremap <silent> <leader>/ :noh<cr>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
