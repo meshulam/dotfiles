@@ -15,8 +15,7 @@ local sh_jobs="%(1j. [%j].)"     # only print jobs if there's at least one
 # Color code cheat sheet: %F{colorname} sets foreground to that color; %f resets.
 
 local pre_git_prompt='%F{cyan}${user}@${host}%F{white}:%f${current_dir}'
-pre_git_prompt="$pre_git_prompt%F{yellow}${sh_jobs}%f"
-local post_git_prompt='
+local post_git_prompt='%F{yellow}${sh_jobs}%f
 %F{cyan}%# %f'
 
 GIT_PS1_SHOWDIRTYSTATE=yep
