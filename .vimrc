@@ -87,6 +87,9 @@ set shiftround
 " Break long lines on whitespace
 set linebreak
 
+" Backspace like a normal application
+set backspace=indent,eol,start
+
 " Enter inserts a newline from normal mode
 nnoremap <cr> o<esc>
 
