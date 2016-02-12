@@ -1,0 +1,13 @@
+[user]
+    name = Matt Meshulam
+    email = matt@meshul.am
+[push]
+    default = simple
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[url "ssh://git@heroku.com/"]
+    insteadOf = https://git.heroku.com/
+[alias]
+    lol = log --decorate --graph --oneline
+
