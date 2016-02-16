@@ -750,9 +750,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 168 606 456 0 0 1440 877 </string>
+	<string>269 197 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>13 255 584 622 0 0 1440 877 </string>
+	<string>0 19 1434 858 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_EF72CA51-6779-481F-AD86-AD0F5BB87002</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -2208,6 +2208,16 @@
 			<string>/Users/matt</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncSilenceAnnoyingBellAutomatically</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>477289807.90592402</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -2260,7 +2270,7 @@
 	<key>PrefsCustomFolder</key>
 	<string>/Users/matt/dotfiles/iterm2</string>
 	<key>PromptOnQuit</key>
-	<true/>
+	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
@@ -2293,6 +2303,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabStyle</key>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
