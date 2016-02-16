@@ -2,7 +2,7 @@
 # Files in subdirs may have other purposes.
 
 # Environment vars that may be useful in this config. Should these get exported?
-ZSH=~/cfg/zsh
+ZSH=~/dotfiles/zsh
 OS=$(uname -a)      # e.g. Darwin, Linux
 
 GLOB="${ZSH}/*"

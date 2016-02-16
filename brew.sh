@@ -1,34 +1,36 @@
+#!/usr/bin/env bash
+
+# Install command-line tools using Homebrew.
+
 # Make sure we’re using the latest Homebrew
-update
+brew update
 
 # Upgrade any already-installed formulae
-upgrade
+brew upgrade --all
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-install coreutils
+brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-install findutils
+brew install findutils
+
 # Install shell
-install zsh
+brew install zsh
 
 # Install wget with IRI support
-install wget --enable-iri
+brew install wget --with-iri
 
 # Install more recent versions of some OS X tools
-install vim --override-system-vi
-tap homebrew/dupes
-install homebrew/dupes/grep
-#
-# This formula didn’t work well last time I tried it:
-#install homebrew/dupes/screen
+brew install vim --override-system-vi
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
 
 # Install other useful binaries
-install ack
-install git
-install lynx
-install tree
-install python
+brew install ack
+brew install git
+brew install lynx
+brew install tree
+brew install python
 
 # Remove outdated versions from the cellar
-cleanup
+brew cleanup
