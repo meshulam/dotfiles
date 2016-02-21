@@ -1,6 +1,10 @@
 # http://zshwiki.org/home/config/prompt
 # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Other-Functions
 
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
 source "$ZSH/addons/git-prompt.sh"
 
 # $PS1 should undergo parameter expansion
@@ -16,7 +20,7 @@ local sh_jobs="%(1j. [%j].)"     # only print jobs if there's at least one
 
 local pre_git_prompt='%F{cyan}${user}@${host}%F{white}:%f${current_dir}'
 local post_git_prompt='%F{yellow}${sh_jobs}%f
-%F{cyan}%# %f'
+%F{blue}$(virtualenv_info)%F{cyan}%# %f'
 
 GIT_PS1_SHOWDIRTYSTATE=yep
 GIT_PS1_SHOWCOLORHINTS=yeah

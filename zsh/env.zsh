@@ -11,9 +11,9 @@ export MAVEN_OPTS="-Xmx2048m"
 
 export DOCKER_HOST=tcp://127.0.0.1:4243
 
-export PATH="$PATH:" # Add RVM to PATH for scripting
+# Python Virtualenv stuff
+export WORKON_HOME="${HOME}/venv"
+VENV_WRAPPER="/usr/local/bin/virtualenvwrapper.sh"
+[ -e $VENV_WRAPPER ] && source $VENV_WRAPPER
 
-# added by travis gem
-[ -f /Users/matt/.travis/travis.sh ] && source /Users/matt/.travis/travis.sh
 
-export COOKBOOK_DIR=$HOME/code/pipelines-inf/cookbooks
