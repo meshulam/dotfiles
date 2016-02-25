@@ -33,3 +33,4 @@ alias glol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gr='git remote -v'
 alias gs='git status -sb'
 
+alias dotfiles='cd ~/dotfiles'
