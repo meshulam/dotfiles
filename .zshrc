@@ -11,3 +11,4 @@ for sourcefile in $~GLOB
 do
     source "$sourcefile"
 done
+

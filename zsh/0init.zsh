@@ -22,5 +22,3 @@ zstyle ':completion::complete:*' cache-path $ZSH/cache/
 setopt no_list_beep     # Don't beep on ambiguous completion
 setopt correct          # Correct command spelling
 
-# Share history between sessions
-setopt share_history

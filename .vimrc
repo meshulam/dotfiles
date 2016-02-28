@@ -118,6 +118,9 @@ noremap <C-L>     <C-W>l
 " Clear search highlighting
 nnoremap <silent> <leader>/ :noh<cr>
 
+" CtrlP
+let g:ctrlp_map = '<leader>p'
+
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
