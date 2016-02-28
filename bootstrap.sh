@@ -18,7 +18,7 @@ echo "Cloning dotfile submodules"
 git submodule update --init --recursive
 
 echo "Symlinking files into ${HOME}"
-for file in ".zshrc" ".vimrc" ".vim" ".gitconfig"; do
+for file in ".zshrc" ".vimrc" ".vim" ".gitconfig" ".ansible.cfg"; do
     ln -i -F -s ${BASEDIR}/${file} ${HOME}
     echo ${file}
 done

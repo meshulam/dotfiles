@@ -16,4 +16,3 @@ export WORKON_HOME="${HOME}/venv"
 VENV_WRAPPER="/usr/local/bin/virtualenvwrapper.sh"
 [ -e $VENV_WRAPPER ] && source $VENV_WRAPPER
 
-
