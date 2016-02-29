@@ -41,8 +41,6 @@ let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 
-" Highlight current line
-set cursorline
 " Make tabs as wide as four spaces
 set tabstop=4
 set shiftwidth=4
@@ -120,6 +118,11 @@ nnoremap <silent> <leader>/ :noh<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'
+
+" NERDTree
+nnoremap <leader>t :NERDTreeToggle<CR>
+" Close Vim if NERDTree is the only remaining window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
