@@ -104,7 +104,9 @@ vnoremap j gj
 inoremap jk <esc>
 
 nnoremap <leader>h :help<space>
-nnoremap <leader>d :bdelete<space>
+
+" http://stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window/4468491#4468491
+nnoremap <leader>d :bprevious\|bdelete #<CR>
 nnoremap <leader>s :w<cr>
 
 " control + vim direction key to navigate windows

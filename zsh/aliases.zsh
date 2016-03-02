@@ -2,6 +2,11 @@
 alias vi=vim
 alias :e=vim
 
+### Finding stuff ###
+function ff {
+    find . -name "*$**"
+}
+
 ###  cd aliases  ###
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -10,7 +15,7 @@ alias cd....='cd ../../..'
 alias cd.....='cd ../../../..'
 alias cd/='cd /'
 
-cd () {
+function cd {
   if   [[ "x$*" == "x..." ]]; then
     cd ../..
   elif [[ "x$*" == "x...." ]]; then
