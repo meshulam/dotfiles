@@ -120,11 +120,13 @@ nnoremap <silent> <leader>/ :noh<cr>
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>
-" Close Vim if NERDTree is the only remaining window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Navigate to current file in the tree
+nnoremap <leader>f :NERDTreeFind<CR>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()

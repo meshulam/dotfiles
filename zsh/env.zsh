@@ -3,6 +3,8 @@
 # All path stuff here plz kthx
 export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin"
 
+export EDITOR=vim
+
 if [[ $(uname) == "Darwin" ]] ; then
 	export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
 fi
