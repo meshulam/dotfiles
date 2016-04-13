@@ -34,5 +34,8 @@ precmd () {
     # Use the form of __git_ps1 that sets the prompt itself because it's
     # allegedly faster
     __git_ps1 "$pre_git_prompt" "$post_git_prompt" ' on ${wh}git${rs}:%s'
+
+    # sets the tab title to current dir
+    echo -ne "\e]1;${PWD##*/}\a"
 }
 
