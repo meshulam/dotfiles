@@ -16,3 +16,5 @@ export WORKON_HOME="${HOME}/venv"
 VENV_WRAPPER="/usr/local/bin/virtualenvwrapper.sh"
 [ -e $VENV_WRAPPER ] && source $VENV_WRAPPER
 
+# Tempo Chef
+export COOKBOOK_DIR="/Users/matt/code/tempo/infrastructure/cookbooks"
