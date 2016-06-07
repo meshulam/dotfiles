@@ -18,3 +18,15 @@ VENV_WRAPPER="/usr/local/bin/virtualenvwrapper.sh"
 
 # Tempo Chef
 export COOKBOOK_DIR="/Users/matt/code/tempo/infrastructure/cookbooks"
+
+_git_short_alias() {
+    CURRENT=$CURRENT+1
+    words[1]=${service:1}   # remove leading 'g' character
+    service=git
+    words=($service $words)
+    echo "words: ${words}"
+    #echo "curcontext: ${curcontext}"
+    #echo "state: ${state}"
+    _git
+}
+compdef _git_short_alias -P 'v*'
