@@ -35,6 +35,8 @@ set secure
 " Enable line numbers
 set number
 
+set diffopt=vertical,filler
+
 " Set colorscheme
 let g:solarized_termcolors=16
 let g:solarized_termtrans = 1
@@ -102,6 +104,9 @@ vnoremap j gj
 
 " use jk to exit insert mode
 inoremap jk <esc>
+
+inoremap <C-S>   <c-o>:write<CR>
+nnoremap <C-S>   :write<CR>
 
 nnoremap <leader>h :help<space>
 
