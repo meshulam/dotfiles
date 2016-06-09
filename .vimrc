@@ -127,6 +127,9 @@ nnoremap <silent> <leader>/ :noh<cr>
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
+" The Silver Searcher (ag)
+" search from project root instead of cwd
+let g:ag_working_path_mode="r"
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>
