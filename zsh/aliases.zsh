@@ -34,14 +34,12 @@ alias be='bundle exec'
 
 ###  Git aliases  ###
 alias g='git'
-alias gaa='git add --all'
-alias gcm='git commit -a -m'
-alias gco='git checkout'
-alias gd='git diff'
-alias glol="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias gr='git remote -v'
-alias gs='git status -sb'
+
+for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
+    # Dynamically create shell aliases 'gXX' from git aliases 'git XX'
+    alias g$al="git $al"
+done
 
 ### ZSH/config helpers ###
-alias dotfiles='cd ~/dotfiles'
+alias cfg='cd ~/dotfiles'
 alias so='source ~/.zshrc'

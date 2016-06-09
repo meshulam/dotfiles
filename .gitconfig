@@ -9,5 +9,11 @@
 [url "ssh://git@heroku.com/"]
     insteadOf = https://git.heroku.com/
 [alias]
+    aa  = add --all
     lol = log --decorate --graph --oneline
-
+    loz = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    cm  = commit -a -m
+    co  = checkout
+    d   = diff
+    r   = remote -v
+    s   = status -sb
