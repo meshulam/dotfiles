@@ -10,10 +10,16 @@
     insteadOf = https://git.heroku.com/
 [alias]
     aa  = add --all
-    lol = log --decorate --graph --oneline
-    loz = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    cm  = commit -a -m
+    # Pretty list branches
+    b   = for-each-ref --sort='-authordate' --format='%(align:13)%(authordate:relative)%(end)%(HEAD)%(refname:strip=2) %(upstream:trackshort)' refs/heads
+    c   = commit --verbose
+    cam = commit -a -m
     co  = checkout
+    cob = checkout -b
     d   = diff
+    l   = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset%n    %s'
+    ll  = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset %s' --numstat
+    lg  = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset%s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
+    p   = pull
     r   = remote -v
     s   = status -sb
