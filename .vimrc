@@ -105,8 +105,13 @@ vnoremap j gj
 " use jk to exit insert mode
 inoremap jk <esc>
 
+" ctrl-s to save
 inoremap <C-S>   <c-o>:write<CR>
 nnoremap <C-S>   :write<CR>
+
+" ctrl-c to quit
+inoremap <C-C>   <C-O>:quit<CR>
+nnoremap <C-C>   :quit<CR>
 
 nnoremap <leader>h :help<space>
 
