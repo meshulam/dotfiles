@@ -1,10 +1,17 @@
+
+alias notes='vim ~/Dropbox/Notes/thoughts.txt'
+
+# Most recently downloaded file
+alias dl='ls -t ~/Downloads/* | head -n 1'
+
+
 ###  I always mean vim  ###
 alias vi=vim
 alias :e=vim
 
 ### Finding stuff ###
 function ff {
-    find . -name "*$**"
+  find . -name "*$**"
 }
 
 
@@ -43,3 +50,4 @@ done
 ### ZSH/config helpers ###
 alias cfg='cd ~/dotfiles'
 alias so='source ~/.zshrc'
+

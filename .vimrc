@@ -24,6 +24,8 @@ if exists("&undodir")
 	set undodir=~/.vim/undo
 endif
 
+" Use the most secure cypher for encrypted files
+set cm=blowfish2
 " Allow unsaved changes in hidden buffers
 set hidden
 " Respect modeline in files
@@ -106,7 +108,7 @@ vnoremap j gj
 inoremap jk <esc>
 
 " ctrl-s to save
-inoremap <C-S>   <c-o>:write<CR>
+inoremap <C-S>   <esc>:write<CR>
 nnoremap <C-S>   :write<CR>
 
 " ctrl-c to quit
