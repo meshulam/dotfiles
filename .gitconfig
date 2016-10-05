@@ -9,6 +9,7 @@
 [url "ssh://git@heroku.com/"]
     insteadOf = https://git.heroku.com/
 [alias]
+    a   = add
     aa  = add --all
     # Pretty list branches
     b   = for-each-ref --sort='-authordate' --format='%(align:13)%(authordate:relative)%(end)%(HEAD)%(refname:strip=2) %(upstream:trackshort)' refs/heads
@@ -21,7 +22,7 @@
     dc  = diff 'HEAD~'      # Diff of the last commit
     l   = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset%n    %s'
     ll  = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset %s' --numstat
-    lg  = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset%s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
+    lg  = log --graph --pretty=format:'%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
     p   = pull
     pu  = push
     r   = remote -v

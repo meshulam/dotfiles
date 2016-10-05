@@ -130,6 +130,9 @@ noremap <C-L>     <C-W>l
 " Clear search highlighting
 nnoremap <silent> <leader>/ :noh<cr>
 
+" Reformat text with Q
+nnoremap Q gq
+
 " CtrlP
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -137,6 +140,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " The Silver Searcher (ag)
 " search from project root instead of cwd
 let g:ag_working_path_mode="r"
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " NERDTree
 nnoremap <leader>t :NERDTreeToggle<CR>

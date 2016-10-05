@@ -1,12 +1,16 @@
 # Environment variables and other things that installed programs like to have.
 
 # All path stuff here plz kthx
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/code/phabricator/arcanist/bin"
+if [[ $(uname) == "Darwin" ]] ; then
+    export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+fi
+
 
 export EDITOR=vim
 
 if [[ $(uname) == "Darwin" ]] ; then
-	export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
 fi
 
 export MAVEN_OPTS="-Xmx2048m"

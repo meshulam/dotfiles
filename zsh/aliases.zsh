@@ -14,6 +14,7 @@ function ff {
   find . -name "*$**"
 }
 
+alias ll='ls -al'
 
 ###  cd aliases  ###
 alias ..='cd ..'
