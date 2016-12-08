@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/ag.vim"]
 	path = .vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
+[submodule ".vim/bundle/apiblueprint.vim"]
+	path = .vim/bundle/apiblueprint.vim
+	url = https://github.com/kylef/apiblueprint.vim.git
