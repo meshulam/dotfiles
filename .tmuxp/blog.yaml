@@ -1,0 +1,15 @@
+session_name: blog
+start_directory: /Users/matt/Dropbox/blog
+windows:
+- window_name: editor
+  focus: 'true'
+  layout: even-horizontal
+  panes:
+    - focus: true
+      shell_command:
+      - vim _posts/_template.md
+    - blank
+- window_name: server
+  panes:
+  - jekyll serve
+

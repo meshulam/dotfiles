@@ -1,0 +1,21 @@
+session_name: hologram-docs
+start_directory: /Users/matt/code/hologram/hologram-web/wp-content/themes/docs_dev
+windows:
+- window_name: editor
+  focus: 'true'
+  layout: even-horizontal
+  panes:
+    - focus: true
+      shell_command:
+      - vi content/apiary.apib
+- window_name: theme
+  start_directory: /Users/matt/code/hologram/hologram-web/wp-content/themes/hologram_dev
+  panes:
+    - vi scss/src/layout/docs/index.scss
+- window_name: server
+  layout: even-horizontal
+  panes:
+    - shell_command: npm run serve
+    - start_directory: /Users/matt/code/hologram/hologram-web/wp-content/themes/hologram_dev
+      shell_command: npm run dev
+

@@ -1,13 +1,15 @@
 # Environment variables and other things that installed programs like to have.
 
 # All path stuff here plz kthx
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/code/phabricator/arcanist/bin"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/code/phabricator/arcanist/bin"
 if [[ $(uname) == "Darwin" ]] ; then
     export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 fi
 
-
+# Use vim as default editor
 export EDITOR=vim
+# ...but still use emacs-style bindings
+bindkey -e
 
 if [[ $(uname) == "Darwin" ]] ; then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home

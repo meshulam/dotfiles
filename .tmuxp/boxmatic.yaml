@@ -1,0 +1,14 @@
+session_name: boxmatic
+start_directory: /Users/matt/Dropbox/proj/graphicsLanguage/boxmaker
+windows:
+- window_name: editor
+  focus: 'true'
+  layout: even-horizontal
+  panes:
+    - focus: true
+      shell_command:
+      - vim app/index.html
+- window_name: server
+  panes:
+  - gulp serve
+

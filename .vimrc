@@ -45,9 +45,9 @@ let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
 
-" Make tabs as wide as four spaces
-set tabstop=4
-set shiftwidth=4
+" Make tabs 2 spaces by default (override in filetypes)
+set tabstop=2
+set shiftwidth=2
 
 " Use spaces for tabs
 set expandtab
@@ -162,4 +162,5 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 let g:pymode_rope = 0
 let g:pymode_lint_ignore = "E501,W,E302,E126,E226"
 let g:pymode_folding = 0
+let g:pymode_trim_whitespaces = 0
 
