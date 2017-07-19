@@ -142,10 +142,19 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ag_working_path_mode="r"
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" NERDTree
-nnoremap <leader>t :NERDTreeToggle<CR>
-" Navigate to current file in the tree
-nnoremap <leader>f :NERDTreeFind<CR>
+" ==== NERD tree
+" Open the project tree and expose current file in the nerdtree with Ctrl-\
+" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! OpenNerdTree()
+  if &modifiable && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+  else
+    NERDTreeToggle
+  endif
+endfunction
+nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
+nnoremap <leader>f :call OpenNerdTree()<CR>
+
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -163,4 +172,54 @@ let g:pymode_rope = 0
 let g:pymode_lint_ignore = "E501,W,E302,E126,E226"
 let g:pymode_folding = 0
 let g:pymode_trim_whitespaces = 0
+
+
+" Reverb keybindings
+"
+function! GetVisual()
+  let reg_save = getreg('"')
+  let regtype_save = getregtype('"')
+  let cb_save = &clipboard
+  set clipboard&
+  normal! ""gvy
+  let selection = getreg('"')
+  call setreg('"', reg_save, regtype_save)
+  let &clipboard = cb_save
+  return selection
+endfunction
+
+"grep the current word using ,k (mnemonic Kurrent)
+nnoremap <silent> ,k :Ag <cword><CR>
+
+"grep visual selection
+vnoremap ,k :<C-U>execute "Ag " . GetVisual()<CR>
+
+"grep current word up to the next exclamation point using ,K
+nnoremap ,K viwf!:<C-U>execute "Ag " . GetVisual()<CR>
+
+"grep for 'def foo'
+nnoremap <silent> ,gd :Ag 'def <cword>'<CR>
+
+",gg = Grep! - using Ag the silver searcher
+" open up a grep line, with a quote started for the search
+nnoremap ,gg :Ag ""<left>
+
+"Grep for usages of the current file
+nnoremap ,gcf :exec "Ag " . expand("%:t:r")<CR>
+
+
+" hit ,f to find the definition of the current class
+" this uses ctags. the standard way to get this is Ctrl-]
+nnoremap <silent> ,f <C-]>
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+
+nnoremap ,rs :RunItermSpec<cr>
+nnoremap ,rl :RunItermSpecLine<cr>
+nnoremap ,ss :RunItermSpringSpec<cr>
+nnoremap ,sl :RunItermSpringSpecLine<cr>
+nnoremap zl :RunItermZeusSpecLine<cr>
+nnoremap zs :RunItermZeusSpec<cr>
 

@@ -1,10 +1,9 @@
 # Environment variables and other things that installed programs like to have.
 
 # All path stuff here plz kthx
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/code/phabricator/arcanist/bin"
-if [[ $(uname) == "Darwin" ]] ; then
-    export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
-fi
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/go/bin"
+
+export GOPATH="$HOME/go"
 
 # Use vim as default editor
 export EDITOR=vim
@@ -13,6 +12,8 @@ bindkey -e
 
 if [[ $(uname) == "Darwin" ]] ; then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
+    ulimit -n 65535 200000
+    export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 fi
 
 export MAVEN_OPTS="-Xmx2048m"
@@ -36,3 +37,4 @@ _git_short_alias() {
     _git
 }
 compdef _git_short_alias -P 'v*'
+

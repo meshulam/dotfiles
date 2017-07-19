@@ -5,6 +5,7 @@
 
   "javascript.validate.enable": true,
   "python.linting.pylintArgs": ["--rcfile=cjp/.pylintrc"],
+
   // Controls the delay in ms after which quick suggestions will show up
   "editor.quickSuggestionsDelay": 100,
   "editor.wordBasedSuggestions": false,
@@ -36,9 +37,19 @@
 
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": false,
-  "editor.minimap.maxColumn": 80,
+  "editor.minimap.maxColumn": 70,
   "editor.formatOnType": true,
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "explorer.autoReveal": false,
-  "search.useIgnoreFilesByDefault": true
+  "search.useIgnoreFilesByDefault": true,
+  "workbench.sideBar.location": "left",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+
+  "window.title": "${rootName}${separator}${activeEditorMedium}",
+  "vim.disableAnnoyingNeovimMessage": true,
+  "workbench.editor.showIcons": false,
+  "files.insertFinalNewline": true,
+  "editor.autoIndent": true,
+  "vim.autoindent": false,
+  "editor.minimap.showSlider": "always"
 }

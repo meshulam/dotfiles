@@ -111,6 +111,9 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
+# Disable press-and-hold character variant popup
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Automatically illuminate built-in MacBook keyboard in low light
 #defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 1 minute

@@ -30,6 +30,6 @@ echo "Changing shell to ${NEWSHELL_PATH}"
 chsh -s ${NEWSHELL_PATH}
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
-    echo "Detected OSX, running osx.sh"
-    source ${BASEDIR}/osx.sh
+    echo "Detected OSX, run osx.sh when this completes"
+    #source ${BASEDIR}/osx.sh
 fi

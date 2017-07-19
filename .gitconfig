@@ -8,6 +8,8 @@
     smudge = git-media-smudge %f
 [url "ssh://git@heroku.com/"]
     insteadOf = https://git.heroku.com/
+[url "git@github.com:"]
+    insteadOf = https://github.com/
 [alias]
     a   = add
     aa  = add --all
