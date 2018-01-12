@@ -44,5 +44,13 @@
   {
     "key": "cmd+k cmd+k",
     "command": "workbench.action.keepEditor"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "workbench.action.files.copyPathOfActiveFile"
+  },
+  {
+    "key": "cmd+k p",
+    "command": "-workbench.action.files.copyPathOfActiveFile"
   }
 ]

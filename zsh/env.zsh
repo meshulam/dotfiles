@@ -1,7 +1,7 @@
 # Environment variables and other things that installed programs like to have.
 
 # All path stuff here plz kthx
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/go/bin"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/Library/Python/2.7/bin"
 
 export GOPATH="$HOME/go"
 
@@ -13,10 +13,7 @@ bindkey -e
 if [[ $(uname) == "Darwin" ]] ; then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
     ulimit -n 65535 200000
-    export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 fi
-
-export MAVEN_OPTS="-Xmx2048m"
 
 # Python Virtualenv stuff
 export WORKON_HOME="${HOME}/venv"
