@@ -9,9 +9,14 @@ alias dl='ls -t ~/Downloads/* | head -n 1'
 alias vi=vim
 alias :e=vim
 
-### Finding stuff ###
+# Finding stuff
 function ff {
   find . -name "*$**"
+}
+
+# Show processes by # of open files
+function openfiles {
+  lsof | awk '{print $1 "\t" $2 "\t" $3}' | sort | uniq -c | sort -n
 }
 
 alias ll='ls -al'
