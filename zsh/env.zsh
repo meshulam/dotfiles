@@ -1,7 +1,7 @@
 # Environment variables and other things that installed programs like to have.
 
 # All path stuff here plz kthx
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/Library/Python/2.7/bin"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/Library/Python/2.7/bin:$HOME/anaconda3/bin"
 
 export GOPATH="$HOME/go"
 
