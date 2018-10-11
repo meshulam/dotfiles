@@ -2,17 +2,15 @@
 {
   "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
-
   "javascript.validate.enable": true,
-  "python.linting.pylintArgs": ["--rcfile=cjp/.pylintrc"],
-
+  "python.linting.pylintArgs": [
+    "--rcfile=cjp/.pylintrc"
+  ],
   // Controls the delay in ms after which quick suggestions will show up
   "editor.quickSuggestionsDelay": 100,
   "editor.wordBasedSuggestions": false,
-
   // When enabled, will trim trailing whitespace when saving a file.
   "files.trimTrailingWhitespace": true,
-
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -20,29 +18,31 @@
     "**/.DS_Store": true,
     "**/*.pyc": true
   },
-
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
-
   "vim.useSystemClipboard": true,
-
   "[python]": {
-    "editor.rulers": [80, 100],
+    "editor.rulers": [
+      80,
+      100
+    ],
     "editor.tabSize": 4
   },
-
   "editor.minimap.enabled": false,
   "editor.formatOnType": true,
   "workbench.activityBar.visible": true,
   "explorer.autoReveal": false,
   "search.useIgnoreFilesByDefault": true,
   "workbench.sideBar.location": "left",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "vim.disableAnnoyingNeovimMessage": true,
   "workbench.editor.showIcons": false,
@@ -50,5 +50,25 @@
   "editor.autoIndent": true,
   "vim.autoindent": false,
   "editor.wordWrap": "off",
-  "editor.scrollBeyondLastLine": false
+  "editor.scrollBeyondLastLine": false,
+  "prettier.eslintIntegration": true,
+  "tslint.autoFixOnSave": true,
+  "files.defaultLanguage": "markdown",
+  "window.zoomLevel": 0,
+  "emmet.excludeLanguages": [
+    "markdown",
+    "jsx",
+    "tsx",
+  ],
+  "editor.fontSize": 14,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "github.hosts": [
+    {
+      "host": "https://github.com",
+      "username": "oauth",
+      "token": "system"
+    }
+  ],
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.formatOnSave": true,
 }
