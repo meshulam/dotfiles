@@ -71,4 +71,17 @@
   ],
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.formatOnSave": true,
+  "window.zoomLevel": 0,
+  "gitlens.keymap": "chorded",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.currentLine.enabled": false,
+  "sync.gist": "df24db8334b2eb9ad490eba63434f6ee",
+  "sync.quietSync": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.forceDownload": false
 }
