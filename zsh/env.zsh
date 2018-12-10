@@ -1,11 +1,12 @@
 # Environment variables and other things that installed programs like to have.
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin:./node_modules/.bin"
+export PATH="./node_modules/.bin:$HOME/bin:/usr/local/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+export PATH="$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export GOPATH="$HOME/go"
-
-export CDPATH="$HOME/dev:$GOPATH"
+export CDPATH="$HOME/dev:$GOPATH/src/github.com/reverbdotcom"
 
 # Use vim as default editor
 export EDITOR=vim
@@ -35,3 +36,5 @@ compdef _git_short_alias -P 'v*'
 
 # eval "$(nodenv init -)"
 export PATH="$PATH:$HOME/.nodenv/shims"
+eval "$(rbenv init -)"
+
