@@ -1,14 +1,15 @@
-# Files in the root of the $ZSH directory are sourced directly.
-# Files in subdirs may have other purposes.
+PROFILE_STARTUP=false
+if [[ "$PROFILE_STARTUP" == true ]]; then
+    # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+    PS4=$'%D{%M%S%.} %N:%i> '
+    # PS4=$'%D{%H:%M:%S%.} %N:%i> '
+    exec 3>&2 2>$HOME/tmp/startlog.$$
+    setopt xtrace prompt_subst
+fi
 
-# Environment vars that may be useful in this config. Should these get exported?
-ZSH=~/dotfiles/zsh
-OS=$(uname -a)      # e.g. Darwin, Linux
+source ~/dotfiles/zsh/main.zsh
 
-GLOB="${ZSH}/*"
-
-for sourcefile in $~GLOB
-do
-    source "$sourcefile"
-done
-
+if [[ "$PROFILE_STARTUP" == true ]]; then
+    unsetopt xtrace
+    exec 2>&3 3>&-
+fi

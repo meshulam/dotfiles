@@ -1,7 +1,7 @@
 # Environment variables and other things that installed programs like to have.
 
-# All path stuff here plz kthx
-export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.rvm/bin:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin:./node_modules/.bin"
+export PATH="$HOME/bin:/usr/local/bin:$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin:./node_modules/.bin"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export GOPATH="$HOME/go"
 
@@ -20,10 +20,6 @@ fi
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
-# Python Virtualenv stuff
-export WORKON_HOME="${HOME}/venv"
-VENV_WRAPPER="/usr/local/bin/virtualenvwrapper.sh"
-[ -e $VENV_WRAPPER ] && source $VENV_WRAPPER
 
 _git_short_alias() {
     CURRENT=$CURRENT+1
@@ -37,5 +33,5 @@ _git_short_alias() {
 }
 compdef _git_short_alias -P 'v*'
 
-eval "$(nodenv init -)"
-
+# eval "$(nodenv init -)"
+export PATH="$PATH:$HOME/.nodenv/shims"
