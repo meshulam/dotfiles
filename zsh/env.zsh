@@ -8,10 +8,12 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export GOPATH="$HOME/go"
 export CDPATH="$HOME/dev:$GOPATH/src/github.com/reverbdotcom"
 
+export PAGER="less"
 # Use vim as default editor
 export EDITOR=vim
 # ...but still use emacs-style bindings
 bindkey -e
+
 
 if [[ $(uname) == "Darwin" ]] ; then
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
@@ -36,5 +38,5 @@ compdef _git_short_alias -P 'v*'
 
 # eval "$(nodenv init -)"
 export PATH="$PATH:$HOME/.nodenv/shims"
-eval "$(rbenv init -)"
+command -v rbenv && eval "$(rbenv init -)"
 

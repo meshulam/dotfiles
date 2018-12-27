@@ -22,13 +22,10 @@ source $zsh_path/history.zsh
 source $zsh_path/env.zsh
 source $zsh_path/completion.zsh
 source $zsh_path/aliases.zsh
+source $zsh_path/nnn.zsh
 source $zsh_path/reverb.zsh
 # source $zsh_path/correction.zsh
 # source $zsh_path/stack.zsh
-
-if command -v fasd >/dev/null 2>&1; then
-  eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install posix-alias)"
-fi
 
 # Don't capture Ctrl-S, so we can use it in vim, etc
 stty -ixon
