@@ -36,7 +36,14 @@ _git_short_alias() {
 }
 compdef _git_short_alias -P 'v*'
 
-# eval "$(nodenv init -)"
-export PATH="$PATH:$HOME/.nodenv/shims"
-command -v rbenv && eval "$(rbenv init -)"
 
+
+if command -v rbenv &>/dev/null ; then
+  PATH="$HOME/.rbenv/shims:${PATH}"
+  export RBENV_SHELL=zsh
+fi
+
+if command -v nodeenv &>/dev/null ; then
+  PATH="$HOME/.nodenv/shims:${PATH}"
+  export NODENV_SHELL=zsh
+fi
