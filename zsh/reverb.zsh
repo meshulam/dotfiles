@@ -7,7 +7,7 @@ alias convoxp='convox login convox-production-2029365087.us-east-1.elb.amazonaws
 alias convoxs='convox login reverb-staging-1222177346.us-east-1.elb.amazonaws.com'
 alias convoxsb='convox login convox-sandbox-628608395.us-east-1.elb.amazonaws.com'
 
-alias rlocal=docker-compose -f $HOME/dev/local/docker-compose.yml
+alias rl="docker-compose -f $HOME/dev/local/docker-compose.yml"
 
 # https://github.com/reverbdotcom/ops/blob/master/shell/aliases.sh
 
@@ -16,3 +16,4 @@ alias rlocal=docker-compose -f $HOME/dev/local/docker-compose.yml
 ressh () {
   rv c "ssh reverb@$1"
 }
+

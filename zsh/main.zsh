@@ -24,6 +24,7 @@ source $zsh_path/completion.zsh
 source $zsh_path/aliases.zsh
 source $zsh_path/nnn.zsh
 source $zsh_path/reverb.zsh
+source $zsh_path/secrets.zsh
 # source $zsh_path/correction.zsh
 # source $zsh_path/stack.zsh
 

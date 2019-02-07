@@ -43,7 +43,7 @@ if command -v rbenv &>/dev/null ; then
   export RBENV_SHELL=zsh
 fi
 
-if command -v nodeenv &>/dev/null ; then
+if command -v nodenv &>/dev/null ; then
   PATH="$HOME/.nodenv/shims:${PATH}"
   export NODENV_SHELL=zsh
 fi

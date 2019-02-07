@@ -29,3 +29,4 @@
     pu  = push
     r   = remote -v
     s   = status -sb
+    po  = push origin HEAD
