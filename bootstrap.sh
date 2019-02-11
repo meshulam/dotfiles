@@ -24,6 +24,8 @@ for file in ".zshrc" ".vimrc" ".ideavimrc" ".vim" ".gitconfig" ".ansible.cfg" \
     echo ${file}
 done
 
+ln -i -F -s ${BASEDIR}/hammerspoon ${HOME}/.hammerspoon
+
 NEWSHELL_PATH="/usr/local/bin/zsh"
 
 echo "Changing shell to ${NEWSHELL_PATH}"
