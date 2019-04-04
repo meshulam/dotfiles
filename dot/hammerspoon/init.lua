@@ -1,3 +1,14 @@
+
+-- Window positioning hotkeys
+hs.loadSpoon("WindowHalfsAndThirds")
+
+spoon.WindowHalfsAndThirds:bindHotkeys({
+  left_half = { {"ctrl", "alt"}, "Left" },
+  right_half = { {"ctrl", "alt"}, "Right" },
+  max_toggle = { {"ctrl", "alt"}, "Up" },
+})
+
+
 -- HANDLE SCROLLING WITH MOUSE BUTTON PRESSED
 local scrollMouseButton = 2
 local deferred = false

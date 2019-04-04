@@ -10,6 +10,10 @@
     insteadOf = https://git.heroku.com/
 [url "git@github.com:"]
     insteadOf = https://github.com/
+[color]
+    diff = auto
+    status = auto
+    branch = auto
 [alias]
     a   = add
     aa  = add --all
@@ -25,8 +29,21 @@
     l   = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset%n    %s'
     ll  = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset %s' --numstat
     lg  = log --graph --pretty=format:'%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
-    p   = pull
-    pu  = push
+    pu  = pull --rebase
+    psh = push
     r   = remote -v
     s   = status -sb
     po  = push origin HEAD
+
+
+
+
+[apply]
+  whitespace = nowarn
+[web]
+  browser = open
+[include]
+  path = ~/.gituser
+
+[pager]
+  branch = cat

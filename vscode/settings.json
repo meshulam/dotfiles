@@ -83,5 +83,6 @@
   "sync.syncExtensions": true,
   "sync.autoDownload": false,
   "sync.autoUpload": false,
-  "sync.forceDownload": false
+  "sync.forceDownload": false,
+  "workbench.iconTheme": "vs-minimal"
 }

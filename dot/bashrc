@@ -1,0 +1,28 @@
+CFG_PATH="${HOME}/dotfiles/shell"
+
+# System- and app-defined paths
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
+fi
+
+# `brew install bash-completion`
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+fi
+
+source ${CFG_PATH}/env.sh
+source ${CFG_PATH}/aliases.sh
+source ${CFG_PATH}/reverb.sh
+
+bind 'set completion-ignore-case on'
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

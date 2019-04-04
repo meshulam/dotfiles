@@ -1,0 +1,4 @@
+vscodevim.vim
+rebornix.ruby
+ms-python.python
+eamodio.gitlens

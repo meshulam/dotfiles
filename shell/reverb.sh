@@ -1,11 +1,9 @@
 export AWS_REGION="us-east-1"
 export AWS_DEFAULT_REGION="us-east-1"
 
-alias fs='foreman start'
+export CDPATH=".:$HOME/dev"
 
-alias convoxp='convox login convox-production-2029365087.us-east-1.elb.amazonaws.com'
-alias convoxs='convox login reverb-staging-1222177346.us-east-1.elb.amazonaws.com'
-alias convoxsb='convox login convox-sandbox-628608395.us-east-1.elb.amazonaws.com'
+alias fs='foreman start'
 
 alias rl="docker-compose -f $HOME/dev/local/docker-compose.yml"
 
