@@ -6,10 +6,16 @@ VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
 .PHONY: update brew-install brew-bundle uninstall dotfiles vscode-config vscode-extensions save-vscode-extensions
 
 dotfiles: $(DOTFILES)
-install: dotfiles brew-install brew-bundle vscode-config vscode-extensions
+install: dotfiles brew-install brew-bundle use-modern-bash vscode-config vscode-extensions
 
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dot/%
 	ln -sFi $< $@
+
+use-modern-bash:  ## Install recent version of bash and use instead of macos catalina's zsh
+	@echo "Trusting bash 5 to use as shell, press enter to continue"; read
+	sudo bash -c 'echo "/usr/local/bin/bash" >> /etc/shells'
+	chsh -s /usr/local/bin/bash
+	. ~/.bashrc
 
 vscode-config:
 	mkdir -p $(VSCODE_PATH)

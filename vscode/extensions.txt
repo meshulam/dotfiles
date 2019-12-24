@@ -1,4 +1,5 @@
-vscodevim.vim
-rebornix.ruby
-ms-python.python
 eamodio.gitlens
+ms-python.python
+ms-vsliveshare.vsliveshare
+rebornix.ruby
+vscodevim.vim

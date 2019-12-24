@@ -34,6 +34,7 @@
     r   = remote -v
     s   = status -sb
     po  = push origin HEAD
+    yolo= !"git add -A && git commit --amend && git push -f origin head"
 
 
 

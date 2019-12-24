@@ -1,17 +1,19 @@
 tap "caskroom/cask"
 
 brew "awscli"
-brew "bash-completion"
 brew "bash"
+brew "bash-completion@2"
 brew "curl"
 brew "findutils"
 brew "git"
 brew "gnu-sed"
 brew "htop-osx"
+brew "hub"
 brew "icu4c"
 brew "jq"
 brew "libxml2"
 brew "libxslt"
+brew "macvim", link: true
 brew "nginx"
 brew "nodenv"
 brew "nvim"
@@ -23,7 +25,6 @@ brew "ruby-build"
 brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
-brew "vim", args: ["with-override-system-vi"]
 brew "wget"
 brew "yarn", args: ["ignore-dependencies"]
 

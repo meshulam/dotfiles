@@ -19,3 +19,5 @@ Thumbs.db
 # vim files
 .netrwhist
 .vim/swaps/*
+
+.vscode

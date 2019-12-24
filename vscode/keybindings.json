@@ -52,5 +52,13 @@
   {
     "key": "cmd+k p",
     "command": "-workbench.action.files.copyPathOfActiveFile"
+  },
+  {
+    "key": "ctrl+cmd+l",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "ctrl+cmd+h",
+    "command": "workbench.action.splitEditorLeft"
   }
 ]

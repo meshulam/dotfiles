@@ -14,7 +14,8 @@ export EDITOR=vim
 
 
 if [[ $(uname) == "Darwin" ]] ; then
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
+    # export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
+    export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
     # ulimit -n 65535 200000
     export FIND=/usr/local/bin/gfind
 fi
@@ -52,7 +53,7 @@ PROMPT_COMMAND='__git_ps1 "\[\033[36m\]\u@\h\[\033[37m\]:\[\033[00m\]\w" "\n\[\0
 
 ## Command history
 # Append and reload new command history at every prompt
-PROMPT_COMMAND="history -a ; history -n ; $PROMPT_COMMAND"
+#PROMPT_COMMAND="history -a ; history -n ; $PROMPT_COMMAND"
 HISTSIZE=10000
 HISTFILESIZE=10000
 HISTTIMEFORMAT="%Y-%m-%d %T "
