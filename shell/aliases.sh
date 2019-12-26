@@ -39,6 +39,7 @@ alias be='bundle exec'
 
 ###  Git aliases  ###
 alias g='git'
+__git_complete g __git_main   # git bash completion for `g`
 
 for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
     # Dynamically create shell aliases 'gXX' from git aliases 'git XX'

@@ -1,7 +1,10 @@
+hs.hotkey.bind({"ctrl", "alt"}, "r", nil, function(e)
+    print("Reloading Hammerspoon Config")
+    hs.reload()
+end)
 
 -- Window positioning hotkeys
 hs.loadSpoon("WindowHalfsAndThirds")
-
 spoon.WindowHalfsAndThirds:bindHotkeys({
   left_half = { {"ctrl", "alt"}, "Left" },
   right_half = { {"ctrl", "alt"}, "Right" },
@@ -9,60 +12,23 @@ spoon.WindowHalfsAndThirds:bindHotkeys({
 })
 
 
--- HANDLE SCROLLING WITH MOUSE BUTTON PRESSED
-local scrollMouseButton = 2
-local deferred = false
+-- require('./scroll_with_button_pressed')
 
-overrideOtherMouseDown = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDown }, function(e)
-    -- print("down")
-    local pressedMouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
-    if scrollMouseButton == pressedMouseButton
-        then
-            deferred = true
-            return true
-        end
-end)
 
-overrideOtherMouseUp = hs.eventtap.new({ hs.eventtap.event.types.otherMouseUp }, function(e)
-    -- print("up")
-    local pressedMouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
-    if scrollMouseButton == pressedMouseButton
-        then
-            if (deferred) then
-                overrideOtherMouseDown:stop()
-                overrideOtherMouseUp:stop()
-                hs.eventtap.otherClick(e:location(), pressedMouseButton)
-                overrideOtherMouseDown:start()
-                overrideOtherMouseUp:start()
-                return true
-            end
-            return false
-        end
-        return false
-end)
+-- hs.hints.style = "vimperator"
+-- local logKeys = false
+-- hs.hotkey.bind({"ctrl", "alt"}, "k", nil, function(e)
+--     hs.hints.windowHints()
+-- end)
 
-local oldmousepos = {}
-local scrollmult = -4   -- negative multiplier makes mouse work like traditional scrollwheel
+-- see http://www.hammerspoon.org/docs/hs.eventtap.event.html#types
+local logEvents = {
+  -- hs.eventtap.event.types.NSApplicationDefined,
+  -- hs.eventtap.event.types.NSEventTypeGesture,
+}
 
-dragOtherToScroll = hs.eventtap.new({ hs.eventtap.event.types.otherMouseDragged }, function(e)
-    local pressedMouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
-    -- print ("pressed mouse " .. pressedMouseButton)
-    if scrollMouseButton == pressedMouseButton
-        then
-            -- print("scroll");
-            deferred = false
-            oldmousepos = hs.mouse.getAbsolutePosition()
-            local dx = e:getProperty(hs.eventtap.event.properties['mouseEventDeltaX'])
-            local dy = e:getProperty(hs.eventtap.event.properties['mouseEventDeltaY'])
-            local scroll = hs.eventtap.event.newScrollEvent({-dx * scrollmult, dy * scrollmult},{},'pixel')
-            -- put the mouse back
-            hs.mouse.setAbsolutePosition(oldmousepos)
-            return true, {scroll}
-        else
-            return false, {}
-        end
-end)
-
-overrideOtherMouseDown:start()
-overrideOtherMouseUp:start()
-dragOtherToScroll:start()
+hs.eventtap.new(logEvents, function(e)
+  print("got event")
+  local pressedMouseButton = e:getProperty(hs.eventtap.event.properties['mouseEventButtonNumber'])
+  print("pressed mouse" .. pressedMouseButton)
+end):start()
