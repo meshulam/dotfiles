@@ -25,14 +25,15 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 
 if command -v rbenv &>/dev/null ; then
   PATH="$HOME/.rbenv/shims:${PATH}"
-  export RBENV_SHELL=zsh
 fi
 
 if command -v nodenv &>/dev/null ; then
   PATH="$HOME/.nodenv/shims:${PATH}"
-  export NODENV_SHELL=zsh
 fi
 
+if command -v pyenv &>/dev/null ; then
+  eval "$(pyenv init -)"
+fi
 
 # Bash prompt colors
 # Black: 30
