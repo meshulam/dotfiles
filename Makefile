@@ -29,7 +29,7 @@ save-vscode-extensions:
 	code --list-extensions > $(VSCODE_EXTENSIONS_FILE)
 
 brew-install:
-	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew-bundle:
 	brew bundle
@@ -37,6 +37,6 @@ brew-bundle:
 uninstall:
 	@echo $(DOTFILES) | xargs -n 1 sh -c 'unlink $$0 || true'
 
-update: all
+update:
 	@git pull
 	@git submodule update --init --recursive
