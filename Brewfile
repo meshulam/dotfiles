@@ -28,5 +28,7 @@ brew "tree"
 brew "wget"
 brew "yarn", args: ["ignore-dependencies"]
 
+cask "alacritty"
 cask "docker"
 cask "visual-studio-code"
+
