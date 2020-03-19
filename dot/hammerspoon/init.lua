@@ -11,6 +11,8 @@ spoon.WindowHalfsAndThirds:bindHotkeys({
   max_toggle = { {"ctrl", "alt"}, "Up" },
 })
 
+--
+-- hs.urlevent.setDefaultHandler("https", "org.hammerspoon.Hammerspoon")
 
 -- require('./scroll_with_button_pressed')
 
@@ -26,6 +28,23 @@ local logEvents = {
   -- hs.eventtap.event.types.NSApplicationDefined,
   -- hs.eventtap.event.types.NSEventTypeGesture,
 }
+
+batteryAlertLevels = { 20, 10 }
+
+lastBatteryLevel = 100
+hs.battery.watcher.new(function()
+  local batteryLevel = hs.battery.percentage()
+
+  for i = 1, #batteryAlertLevels do
+    local alert = batteryAlertLevels[i]
+    if batteryLevel < alert and lastBatteryLevel >= alert then
+      local message = "Battery dropped below " .. alert .. "%"
+      hs.notify.new({title="Hammerspoon", informativeText=message}):send()
+    end
+  end
+
+  lastBatteryLevel = batteryLevel
+end):start()
 
 hs.eventtap.new(logEvents, function(e)
   print("got event")
