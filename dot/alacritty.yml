@@ -163,45 +163,46 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
+colors-dotshare:
 colors:
   # Default colors
   primary:
-    background: '0x000000'
-    foreground: '0x888888'
+    background: '0x151515'
+    foreground: '0xd7d0c7'
 
   # Normal colors
   normal:
-    black:   '0x292929'
-    red:     '0xcf6a4c'
-    green:   '0x19cb00'
-    yellow:  '0xfad07a'
-    blue:    '0x8197bf'
-    magenta: '0x8787af'
-    cyan:    '0x668799'
-    white:   '0x888888'
+    black:   '0x101010'
+    red:     '0xe84f4f'
+    green:   '0xb8d68c'
+    yellow:  '0xe1aa5d'
+    blue:    '0x7dc1cf'
+    magenta: '0x9b64fb'
+    cyan:    '0x6d878d'
+    white:   '0xdddddd'
 
   # Bright colors
   bright:
-    black:   '0x525252'
-    red:     '0xff9d80'
-    green:   '0x23fd00'
-    yellow:  '0xffefbf'
-    blue:    '0xaccaff'
-    magenta: '0xc4c4ff'
-    cyan:    '0x80bfaf'
-    white:   '0xe8e8d3'
+    black:   '0x404040'
+    red:     '0xd23d3d'
+    green:   '0xa0cf5d'
+    yellow:  '0xf39d21'
+    blue:    '0x4e9fb1'
+    magenta: '0x8542ff'
+    cyan:    '0x42717b'
+    white:   '0xdddddd'
 
-# Colors (Tomorrow Night Bright)
+
 colors-tomorrow-night-bright:
   # Default colors
-  #primary:
-    #background: '0x000000'
-    #foreground: '0xeaeaea'
+  primary:
+    background: '0x000000'
+    foreground: '0xeaeaea'
 
     # Bright and dim foreground colors
     #
@@ -310,7 +311,7 @@ selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true

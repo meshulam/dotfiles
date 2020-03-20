@@ -497,6 +497,12 @@
         "options": {
           "full_name": "visual-studio-code"
         }
+      },
+      "alacritty": {
+        "version": "0.4.1",
+        "options": {
+          "full_name": "alacritty"
+        }
       }
     }
   },
@@ -514,7 +520,7 @@
         "HOMEBREW_VERSION": "2.2.9-25-g19050bd",
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "d362604df1aec03ea3468b17468cc1bead3a24d7",
-        "CLT": "11.0.0.0.1.1567737322",
+        "CLT": "11.3.1.0.1.1576735732",
         "Xcode": "11.3.1",
         "macOS": "10.15.3"
       }
