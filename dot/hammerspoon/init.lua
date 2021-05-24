@@ -3,6 +3,17 @@ hs.hotkey.bind({"ctrl", "alt"}, "r", nil, function(e)
     hs.reload()
 end)
 
+
+hs.hotkey.bind({"cmd", "alt"}, "v", nil, function(e)
+  local p = hs.pasteboard.readAllData()
+  print('pb contents:')
+  for k,v in pairs(p) do
+    print(k)
+  end
+
+  hs.pasteboard.writeObjects(p["public.html"])
+end)
+
 -- Window positioning hotkeys
 hs.loadSpoon("WindowHalfsAndThirds")
 spoon.WindowHalfsAndThirds:bindHotkeys({
