@@ -130,5 +130,11 @@
     }
   },
   "gitlens.hovers.currentLine.enabled": false,
-  "typescript.tsserver.log": "verbose"
+"typescript.tsserver.log": "verbose",
+"python.languageServer": "Microsoft",
+"workbench.editorAssociations": {
+  "*.ipynb": "jupyter.notebook.ipynb"
+},
+"csv-edit.fontSizeInPx": 14,
+"csv-edit.readOption_hasHeader": "true"
 }

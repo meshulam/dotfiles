@@ -3,11 +3,9 @@
 (package-initialize)
 
 (xterm-mouse-mode 1)
+(tool-bar-mode -1)
 
-;; Mac-specific configs
-(ns-antialias-text t)
-(ns-auto-hide-menu-bar nil))
-''
+
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
