@@ -30,5 +30,6 @@ brew "yarn", args: ["ignore-dependencies"]
 
 cask "alacritty"
 cask "docker"
+cask "syncthing"
 cask "visual-studio-code"
 

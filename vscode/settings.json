@@ -128,12 +128,14 @@
     }
   },
   "gitlens.hovers.currentLine.enabled": false,
-"typescript.tsserver.log": "off",
-"editor.renderControlCharacters": true,
-"typescript.updateImportsOnFileMove.enabled": "always",
-"go.toolsManagement.autoUpdate": true,
-"python.languageServer": "Default",
-"eslint.packageManager": "yarn",
-"workbench.editor.limit.enabled": true,
-"workbench.editor.limit.perEditorGroup": true
+  "typescript.tsserver.log": "off",
+  "editor.renderControlCharacters": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "go.toolsManagement.autoUpdate": true,
+  "python.languageServer": "Default",
+  "eslint.packageManager": "yarn",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true
+  "csv-edit.fontSizeInPx": 14,
+  "csv-edit.readOption_hasHeader": "true"
 }

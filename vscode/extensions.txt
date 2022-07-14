@@ -1,5 +1,7 @@
+DavidAnson.vscode-markdownlint
 eamodio.gitlens
 ms-python.python
 ms-vsliveshare.vsliveshare
 rebornix.ruby
 vscodevim.vim
+wingrunr21.vscode-ruby
