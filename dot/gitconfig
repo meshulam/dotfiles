@@ -8,7 +8,7 @@
     smudge = git-media-smudge %f
 [url "ssh://git@heroku.com/"]
     insteadOf = https://git.heroku.com/
-[url "git@github.com:"]
+[url "ssh://git@github.com/"]
     insteadOf = https://github.com/
 [color]
     diff = auto

@@ -45,7 +45,7 @@ for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
     # Dynamically create shell aliases 'gXX' from git aliases 'git XX'
     alias g$al="git $al"
 done
-alias git-delete-merged='git branch --merged master | grep -v master | xargs -n 1 git branch -d'
+alias git-delete-merged='git branch --merged main | grep -v main | xargs -n 1 git branch -d'
 
 ### ZSH/config helpers ###
 alias so='source ~/.zshrc'

@@ -44,7 +44,7 @@
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "workbench.editor.showIcons": false,
   "files.insertFinalNewline": true,
-  "editor.autoIndent": true,
+  "editor.autoIndent": "full",
   "vim.autoindent": false,
   "editor.wordWrap": "off",
   "editor.scrollBeyondLastLine": false,
@@ -70,7 +70,6 @@
     }
   ],
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "window.zoomLevel": 0,
   "gitlens.keymap": "alternate",
   "gitlens.advanced.messages": {
     "suppressShowKeyBindingsNotice": true
@@ -79,7 +78,6 @@
   "files.autoSave": "off",
   "explorer.confirmDragAndDrop": false,
   "search.exclude": {
-    "**/build": true,
     "**/dist": true
   },
   "explorer.confirmDelete": false,
@@ -130,5 +128,12 @@
     }
   },
   "gitlens.hovers.currentLine.enabled": false,
-  "typescript.tsserver.log": "verbose"
+"typescript.tsserver.log": "off",
+"editor.renderControlCharacters": true,
+"typescript.updateImportsOnFileMove.enabled": "always",
+"go.toolsManagement.autoUpdate": true,
+"python.languageServer": "Default",
+"eslint.packageManager": "yarn",
+"workbench.editor.limit.enabled": true,
+"workbench.editor.limit.perEditorGroup": true
 }
