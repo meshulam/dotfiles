@@ -15,4 +15,4 @@ ressh () {
   rv c "ssh reverb@$1"
 }
 
-alias tilt="/usr/local/bin/tilt"
+alias tilt="/opt/homebrew/bin/tilt"

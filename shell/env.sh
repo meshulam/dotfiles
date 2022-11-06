@@ -1,6 +1,16 @@
 # Environment variables and other things that installed programs like to have.
 
-export PATH="./node_modules/.bin:$HOME/bin:/usr/local/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+### begin homebrew
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+### end homebrew
+
+# Clang errors when building ruby
+export CFLAGS="-Wno-error=implicit-function-declaration"
 
 export PATH="$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin"
 

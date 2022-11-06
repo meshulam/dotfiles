@@ -6,8 +6,8 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 # bash-completion@2
-export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+export BASH_COMPLETION_COMPAT_DIR="/opt/homebrew/etc/bash_completion.d"
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 source ${CFG_PATH}/env.sh
 source ${CFG_PATH}/secrets.sh
@@ -17,4 +17,6 @@ source ${CFG_PATH}/reverb.sh
 bind 'set completion-ignore-case on'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f ~/.bash.local ] && source ~/.bash.local
 

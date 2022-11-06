@@ -50,3 +50,5 @@
   branch = cat
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
