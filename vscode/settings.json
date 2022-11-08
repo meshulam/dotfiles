@@ -135,7 +135,7 @@
   "python.languageServer": "Default",
   "eslint.packageManager": "yarn",
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": true
+  "workbench.editor.limit.perEditorGroup": true,
   "csv-edit.fontSizeInPx": 14,
   "csv-edit.readOption_hasHeader": "true"
 }

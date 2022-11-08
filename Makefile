@@ -1,14 +1,18 @@
-SOURCES := $(shell ls dot)
-DOTFILES :=  $(patsubst %, ${HOME}/.%, $(SOURCES))
+DOTFILES := $(patsubst %, ${HOME}/.%, $(shell ls dot))
+DOTCONFIG_FILES := $(patsubst %, ${HOME}/.config/%, $(shell ls dotconfig))
+
 VSCODE_PATH := "${HOME}/Library/Application Support/Code/User"
 VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
 
 .PHONY: update brew-install brew-bundle uninstall dotfiles vscode-config vscode-extensions save-vscode-extensions
 
-dotfiles: $(DOTFILES)
+dotfiles: $(DOTFILES) $(DOTCONFIG_FILES)
 install: dotfiles brew-install brew-bundle use-modern-bash vscode-config vscode-extensions
 
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dot/%
+	ln -sFi $< $@
+
+$(DOTCONFIG_FILES): $(addprefix ${HOME}/.config/, %) : ${PWD}/dotconfig/%
 	ln -sFi $< $@
 
 use-modern-bash:  ## Install recent version of bash and use instead of macos catalina's zsh
