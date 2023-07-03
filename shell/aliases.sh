@@ -1,8 +1,16 @@
 # Most recently downloaded file
 alias dl='ls -t ~/Downloads/* | head -n 1'
 
-###  I always mean vim  ###
 alias vi=vim
+alias tf=terraform
+
+alias ll='ls -al'
+
+alias less='less -R'
+
+alias be='bundle exec'
+
+alias so='source ~/.zshrc'
 
 # Finding stuff
 function ff {
@@ -14,7 +22,6 @@ function openfiles {
   lsof | awk '{print $1 "\t" $2 "\t" $3}' | sort | uniq -c | sort -n
 }
 
-alias ll='ls -al'
 
 ###  cd aliases  ###
 alias ..='cd ..'
@@ -29,13 +36,10 @@ function cd {
   fi
 }
 
-alias less='less -R'
 
-###  OSX-specific aliases  ###
 alias brews='brew list -1'
 
 ###  Ruby  ###
-alias be='bundle exec'
 
 ###  Git aliases  ###
 alias g='git'
@@ -47,6 +51,6 @@ for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
 done
 alias git-delete-merged='git branch --merged main | grep -v main | xargs -n 1 git branch -d'
 
-### ZSH/config helpers ###
-alias so='source ~/.zshrc'
+
+alias unassume-role="unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN ASSUMED_ROLE"
 

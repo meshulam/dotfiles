@@ -15,6 +15,7 @@ export CFLAGS="-Wno-error=implicit-function-declaration"
 export PATH="$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin"
 
 export GOPATH="$HOME/go"
+export GOPRIVATE="github.com/reverbdotcom"
 
 export PAGER="less"
 # Use vim as default editor
