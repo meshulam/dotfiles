@@ -20,3 +20,5 @@ bind 'set completion-ignore-case on'
 
 [ -f ~/.bash.local ] && source ~/.bash.local
 
+source "/Users/mattm/.rover/env"
+. "$HOME/.cargo/env"

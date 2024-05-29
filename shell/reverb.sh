@@ -20,3 +20,21 @@ helm-du() {
   helm dependency update
 }
 
+export AWS_DEFAULT_PROFILE=preprod
+
+ap() {
+  if [ -z "${1}" ]; 
+  then
+    aws sts get-caller-identity
+  else
+    export AWS_PROFILE=$1
+    echo "set AWS_PROFILE=$1"
+  fi
+}
+
+_ap()
+{
+  COMPREPLY=($(compgen -W "$(aws configure list-profiles)" "${COMP_WORDS[1]}"))
+}
+
+complete -F _ap ap
