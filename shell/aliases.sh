@@ -54,3 +54,4 @@ alias git-delete-merged='git branch --merged main | grep -v main | xargs -n 1 gi
 
 alias unassume-role="unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN ASSUMED_ROLE"
 
+alias activate="source venv/bin/activate"

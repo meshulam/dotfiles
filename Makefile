@@ -17,8 +17,8 @@ $(DOTCONFIG_FILES): $(addprefix ${HOME}/.config/, %) : ${PWD}/dotconfig/%
 
 use-modern-bash:  ## Install recent version of bash and use instead of macos catalina's zsh
 	@echo "Trusting bash 5 to use as shell, press enter to continue"; read
-	sudo bash -c 'echo "/usr/local/bin/bash" >> /etc/shells'
-	chsh -s /usr/local/bin/bash
+	sudo bash -c 'echo "/opt/homebrew/bin/bash" >> /etc/shells'
+	chsh -s /opt/homebrew/bin/bash
 	. ~/.bashrc
 
 vscode-config:

@@ -3,6 +3,7 @@ tap "homebrew/cask"
 brew "awscli"
 brew "bash"
 brew "bash-completion@2"
+brew "bind"  # `dig` command
 brew "curl"
 brew "findutils"
 brew "git"
@@ -26,7 +27,6 @@ brew "the_silver_searcher"
 brew "tmux"
 brew "tree"
 brew "wget"
-brew "yarn", args: ["ignore-dependencies"]
 
 cask "alacritty"
 cask "docker"

@@ -7,7 +7,7 @@ if [[ "$PROFILE_STARTUP" == true ]]; then
     setopt xtrace prompt_subst
 fi
 
-source ~/dotfiles/zsh/main.zsh
+source ~/dotfiles/main.zsh
 
 if [[ "$PROFILE_STARTUP" == true ]]; then
     unsetopt xtrace
