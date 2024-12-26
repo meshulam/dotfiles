@@ -420,4 +420,8 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "Dock" \
 	"Transmission" "Twitter" "iCal"; do
 	killall "${app}" > /dev/null 2>&1
 done
+
+# symlink 1password ssh agent socket for consistency between macOS and Linux
+mkdir -p ~/.1password && ln -s ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ~/.1password/agent.sock
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."

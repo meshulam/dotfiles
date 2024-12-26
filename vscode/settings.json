@@ -59,7 +59,7 @@
     "jsx",
     "tsx",
   ],
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "github.hosts": [
     {
@@ -141,6 +141,8 @@
   "workbench.editor.limit.perEditorGroup": true,
   "csv-edit.fontSizeInPx": 14,
   "csv-edit.readOption_hasHeader": "true",
+  "editor.fontFamily": "Inconsolata, Monaco, 'Courier New', monospace",
+  "rust-analyzer.check.command": "clippy",
   "terminal.integrated.defaultProfile.osx": "bash",
   "terminal.integrated.enableMultiLinePasteWarning": false
 }
