@@ -5,7 +5,7 @@
   "javascript.validate.enable": true,
   // Controls the delay in ms after which quick suggestions will show up
   "editor.quickSuggestionsDelay": 100,
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   // When enabled, will trim trailing whitespace when saving a file.
   "files.trimTrailingWhitespace": true,
   "files.exclude": {
@@ -38,7 +38,6 @@
     "editor.tabSize": 4
   },
   "editor.minimap.enabled": false,
-  "workbench.activityBar.visible": true,
   "explorer.autoReveal": false,
   "workbench.sideBar.location": "left",
   "window.title": "${rootName}${separator}${activeEditorMedium}",
@@ -60,7 +59,7 @@
     "jsx",
     "tsx",
   ],
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "github.hosts": [
     {
@@ -137,5 +136,7 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "csv-edit.fontSizeInPx": 14,
-  "csv-edit.readOption_hasHeader": "true"
+  "csv-edit.readOption_hasHeader": "true",
+  "editor.fontFamily": "Inconsolata, Monaco, 'Courier New', monospace",
+  "rust-analyzer.check.command": "clippy"
 }

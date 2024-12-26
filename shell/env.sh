@@ -12,7 +12,7 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 # Clang errors when building ruby
 export CFLAGS="-Wno-error=implicit-function-declaration"
 
-export PATH="$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin"
+export PATH="$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin:$HOME/.cargo/bin"
 
 export GOPATH="$HOME/go"
 

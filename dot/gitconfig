@@ -52,5 +52,4 @@
 	ff = only
 [init]
 	defaultBranch = main
-[diff]
-	external = difft
+
