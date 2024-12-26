@@ -71,6 +71,7 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "gitlens.keymap": "alternate",
   "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true,
     "suppressShowKeyBindingsNotice": true
   },
   "workbench.iconTheme": "vs-minimal",
@@ -131,6 +132,9 @@
   "editor.renderControlCharacters": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "go.toolsManagement.autoUpdate": true,
+  "go.alternateTools": {
+    "go": "/opt/homebrew/bin/go"
+  },
   "python.languageServer": "Default",
   "eslint.packageManager": "yarn",
   "workbench.editor.limit.enabled": true,
@@ -138,5 +142,7 @@
   "csv-edit.fontSizeInPx": 14,
   "csv-edit.readOption_hasHeader": "true",
   "editor.fontFamily": "Inconsolata, Monaco, 'Courier New', monospace",
-  "rust-analyzer.check.command": "clippy"
+  "rust-analyzer.check.command": "clippy",
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.enableMultiLinePasteWarning": false
 }

@@ -15,6 +15,7 @@ export CFLAGS="-Wno-error=implicit-function-declaration"
 export PATH="$PATH:$HOME/.npm-packages/bin:$HOME/go/bin:$HOME/anaconda3/bin:$HOME/.cargo/bin"
 
 export GOPATH="$HOME/go"
+export GOPRIVATE="github.com/reverbdotcom"
 
 export PAGER="less"
 # Use vim as default editor
@@ -32,7 +33,6 @@ fi
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
-
 if command -v rbenv &>/dev/null ; then
   PATH="$HOME/.rbenv/shims:${PATH}"
 fi
@@ -41,8 +41,8 @@ if command -v nodenv &>/dev/null ; then
   PATH="$HOME/.nodenv/shims:${PATH}"
 fi
 
-if command -v pyenv &>/dev/null ; then
-  eval "$(pyenv init -)"
+if command -v asdf &>/dev/null ; then
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
 # Bash prompt colors
