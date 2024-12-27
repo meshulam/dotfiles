@@ -49,10 +49,10 @@ alias brews='brew list -1'
 alias g='git'
 # __git_complete g __git_main   # git bash completion for `g`
 
-for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
-    # Dynamically create shell aliases 'gXX' from git aliases 'git XX'
-    alias g$al="git $al"
-done
+# for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
+#     # Dynamically create shell aliases 'gXX' from git aliases 'git XX'
+#     alias g$al="git $al"
+# done
 alias git-delete-merged='git branch --merged main | grep -v main | xargs -n 1 git branch -d'
 
 

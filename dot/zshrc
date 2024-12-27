@@ -19,7 +19,6 @@ fi
 CFG_PATH="${HOME}/dotfiles/shell"
 source ${CFG_PATH}/env.sh
 source ${CFG_PATH}/aliases.sh
-source ${CFG_PATH}/reverb.sh
 
 ####################################
 # Command history configuration

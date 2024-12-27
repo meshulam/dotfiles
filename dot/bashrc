@@ -11,8 +11,6 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.npm-packages/bin:$HOME/go/bin"
 
-export GOPATH="$HOME/go"
-
 export PAGER="less"
 # Use vim as default editor
 export EDITOR=vim
@@ -37,22 +35,39 @@ export BASH_COMPLETION_COMPAT_DIR="/opt/homebrew/etc/bash_completion.d"
 
 bind 'set completion-ignore-case on'
 
-# Bash prompt colors
-# Black: 30
-# Blue: 34
-# Cyan: 36
-# Green: 32
-# Purple: 35
-# Red: 31
-# White: 37
-# Yellow: 33
-# reset: 00
-#  \[\033[CCm\] e.g. \[\033[35m\] for purple
+export GIT_PS1_SHOWDIRTYSTATE=y
+export GIT_PS1_SHOWCOLORHINTS=y
+export GIT_PS1_SHOWUNTRACKEDFILES=y
+source "${CFG_PATH}/shell/git-prompt.sh"
 
-GIT_PS1_SHOWDIRTYSTATE=y
-GIT_PS1_SHOWCOLORHINTS=y
-GIT_PS1_SHOWUNTRACKEDFILES=y
-PROMPT_COMMAND='__git_ps1 "\[\033[36m\]\u@\h\[\033[37m\]:\[\033[00m\]\w" "\n\[\033[36m\]\$ \[\033[00m\]" " on \[\033[37m\]git\[\033[00m\]:%s"'
+# Bash prompt colors
+reset="\e[0m";
+black="\e[1;30m";
+blue="\e[1;34m";
+cyan="\e[1;36m";
+green="\e[1;32m";
+purple="\e[1;35m";
+red="\e[1;31m";
+white="\e[1;37m";
+yellow="\e[1;33m";
+
+# Highlight the hostname when connected via SSH.
+if [[ "${SSH_TTY}" ]]; then
+	hostStyle="${red}";
+else
+	hostStyle="${cyan}";
+fi;
+
+# Set the terminal title and prompt.
+PS1="\[${reset}\]\t "; # timestamp
+PS1+="\[${cyan}\]\u"; # username
+PS1+="\[${white}\]@";
+PS1+="\[${hostStyle}\]\h"; # host
+PS1+="\[${white}\]:";
+PS1+="\[${white}\]\w"; # working directory full path
+PS1+="\[${white}\]\$(__git_ps1 \" (%s)\")"; # Git repository details
+PS1+="\[${cyan}\]\$ \[${reset}\]"; # `$` (and reset color)
+export PS1;
 
 ## Command history
 # Append and reload new command history at every prompt
@@ -63,16 +78,5 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 source ${CFG_PATH}/shell/aliases.sh
 
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# [ -f ~/.bash.local ] && source ~/.bash.local
-if [ -z "$SSH_AUTH_SOCK" ] ; then
-	eval "$(ssh-agent -s)"
-	# ssh-add ~/.ssh/
-fi
-
-HOMEDIR_INCLUDES=".fzf.bash .bash.local"
-
-for include in ${HOMEDIR_INCLUDES}; do
-	[ -f "${HOME}/${include}" ] && source "${HOME}/${include}"
-done
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.bash.local ] && source ~/.bash.local

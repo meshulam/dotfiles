@@ -1,9 +1,0 @@
-set visualbell
-set noerrorbells
-set clipboard=unnamed
-
-" use jk to exit insert mode
-inoremap jk <esc>
-
-" Change mapleader
-let mapleader=" "

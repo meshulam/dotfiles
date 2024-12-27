@@ -4,7 +4,7 @@ DOTCONFIG_FILES := $(patsubst %, ${HOME}/.config/%, $(shell ls dotconfig))
 VSCODE_PATH := "${HOME}/Library/Application Support/Code/User"
 VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
 
-.PHONY: update brew-install brew-bundle uninstall dotfiles vscode-config vscode-extensions save-vscode-extensions
+.PHONY: brew-install brew-bundle uninstall dotfiles vscode-config vscode-extensions save-vscode-extensions
 
 dotfiles: $(DOTFILES) $(DOTCONFIG_FILES)
 install: dotfiles brew-install brew-bundle use-modern-bash vscode-config vscode-extensions
@@ -41,6 +41,3 @@ brew-bundle:
 uninstall:
 	@echo $(DOTFILES) | xargs -n 1 sh -c 'unlink $$0 || true'
 
-update:
-	@git pull
-	@git submodule update --init --recursive
