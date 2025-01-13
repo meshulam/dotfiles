@@ -59,7 +59,7 @@
     "jsx",
     "tsx",
   ],
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "github.hosts": [
     {
@@ -71,11 +71,12 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "gitlens.keymap": "alternate",
   "gitlens.advanced.messages": {
+    "suppressGitVersionWarning": true,
     "suppressLineUncommittedWarning": true,
     "suppressShowKeyBindingsNotice": true
   },
   "workbench.iconTheme": "vs-minimal",
-  "files.autoSave": "off",
+  "files.autoSave": "onFocusChange",
   "explorer.confirmDragAndDrop": false,
   "search.exclude": {
     "**/dist": true
@@ -129,7 +130,7 @@
   },
   "gitlens.hovers.currentLine.enabled": false,
   "typescript.tsserver.log": "off",
-  "editor.renderControlCharacters": true,
+  "editor.renderControlCharacters": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "go.toolsManagement.autoUpdate": true,
   "go.alternateTools": {
@@ -141,8 +142,66 @@
   "workbench.editor.limit.perEditorGroup": true,
   "csv-edit.fontSizeInPx": 14,
   "csv-edit.readOption_hasHeader": "true",
-  "editor.fontFamily": "Inconsolata, Monaco, 'Courier New', monospace",
-  "rust-analyzer.check.command": "clippy",
-  "terminal.integrated.defaultProfile.osx": "bash",
-  "terminal.integrated.enableMultiLinePasteWarning": false
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "remote.SSH.lockfilesInTmp": true,
+  "remote.SSH.maxReconnectionAttempts": 3,
+  "remote.SSH.remoteServerListenOnSocket": true,
+  "remote.SSH.showLoginTerminal": true,
+  "remote.SSH.remotePlatform": {
+    "msi-vscode": "linux",
+    "snow.msi.umn.edu": "linux",
+    "snow-vscode": "linux"
+  },
+  "git.ignoreLegacyWarning": true,
+  "gitlens.remotes": [
+    {
+      "domain": "github.umn.edu",
+      "type": "GitHub"
+    }
+  ],
+  "ruff.codeAction.disableRuleComment": {
+    "enable": false
+  },
+  "files.associations": {
+    "*.inc": "php",
+    "*.module": "php"
+  },
+  "git.confirmSync": false,
+  "python.analysis.autoImportCompletions": true,
+  "testing.defaultGutterClickAction": "debug",
+  "git.suggestSmartCommit": false,
+  "[php]": {
+    "files.insertFinalNewline": false,
+    "editor.tabSize": 4,
+  },
+  "python.analysis.showOnlyDirectDependenciesInAutoImport": true,
+  "python.analysis.packageIndexDepths": [
+
+    {
+      "name": "sklearn",
+      "depth": 2
+    },
+    {
+      "name": "matplotlib",
+      "depth": 2
+    },
+    {
+      "name": "scipy",
+      "depth": 2
+    },
+    {
+      "name": "django",
+      "depth": 3
+    },
+    {
+      "name": "flask",
+      "depth": 2
+    },
+    {
+      "name": "fastapi",
+      "depth": 2
+    }
+  ],
+  "redhat.telemetry.enabled": false,
+  "terminal.external.osxExec": "Ghostty.app"
 }
