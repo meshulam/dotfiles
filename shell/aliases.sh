@@ -25,16 +25,9 @@ function openfiles {
 
 ###  cd aliases  ###
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
-function cd {
-  if   [[ "x$*" == "x..." ]]; then
-    cd ../..
-  elif [[ "x$*" == "x...." ]]; then
-    cd ../../..
-  else
-    builtin cd "$@"
-  fi
-}
 
 # Copy kitty terminal config to remotes https://wiki.archlinux.org/title/Kitty#Terminal_issues_with_SSH
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
@@ -43,11 +36,9 @@ alias less='less -R'
 
 alias brews='brew list -1'
 
-###  Ruby  ###
-
 ###  Git aliases  ###
 alias g='git'
-# __git_complete g __git_main   # git bash completion for `g`
+__git_complete g __git_main   # git bash completion for `g`
 
 # for al in `git config --name-only --get-regexp '^alias' | cut -c 7-`; do
 #     # Dynamically create shell aliases 'gXX' from git aliases 'git XX'
