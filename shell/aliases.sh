@@ -22,6 +22,11 @@ function openfiles {
   lsof | awk '{print $1 "\t" $2 "\t" $3}' | sort | uniq -c | sort -n
 }
 
+function flushdns {
+  if [[ $(uname) == "Darwin" ]] ; then
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+  fi
+}
 
 ###  cd aliases  ###
 alias ..='cd ..'

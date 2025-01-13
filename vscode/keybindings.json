@@ -24,7 +24,7 @@
     "command": "workbench.action.focusNextGroup"
   },
   {
-    "key": "ctrl+h",
+    "key": "ctrl+j",
     "command": "workbench.action.focusPreviousGroup"
   },
   {
@@ -80,5 +80,15 @@
     "key": "j",
     "command": "cursorDown",
     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode == 'Normal' && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+  },
+  {
+    "key": "alt+j",
+    "command": "editor.action.joinLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-editor.action.joinLines",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]

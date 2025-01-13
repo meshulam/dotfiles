@@ -24,6 +24,10 @@ if command -v asdf &>/dev/null ; then
   . "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
+if command -v jj &>/dev/null ; then
+	source <(jj util completion bash)
+fi
+
 # System- and app-defined paths
 if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
