@@ -43,7 +43,7 @@ fi
   && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 [[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/etc/profile.d/bash_completion.sh"
-# /usr/share/bash-completion/completions/git
+[[ -r "/usr/share/bash-completion/completions/git" ]] && . "/usr/share/bash-completion/completions/git"
 
 bind 'set completion-ignore-case on'
 
