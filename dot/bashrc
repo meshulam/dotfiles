@@ -1,13 +1,17 @@
 CFG_PATH="${HOME}/dotfiles"
 
-### begin homebrew
-export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-### end homebrew
+##########################################
+# Darwin/Homebrew
+##########################################
+if [[ $(uname) == "Darwin" ]] ; then
+	### homebrew
+	export HOMEBREW_PREFIX="/opt/homebrew";
+	export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+	export HOMEBREW_REPOSITORY="/opt/homebrew";
+	export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+	export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+	export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+fi
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.npm-packages/bin:$HOME/go/bin"
 
@@ -33,9 +37,13 @@ if [ -x /usr/libexec/path_helper ]; then
 	eval `/usr/libexec/path_helper -s`
 fi
 
-# bash-completion@2
-export BASH_COMPLETION_COMPAT_DIR="/opt/homebrew/etc/bash_completion.d"
-[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+# mac bash-completion@2
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] \
+  && export BASH_COMPLETION_COMPAT_DIR="/opt/homebrew/etc/bash_completion.d" \
+  && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+[[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/etc/profile.d/bash_completion.sh"
+# /usr/share/bash-completion/completions/git
 
 bind 'set completion-ignore-case on'
 

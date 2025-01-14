@@ -10,10 +10,10 @@ dotfiles: $(DOTFILES) $(DOTCONFIG_FILES)
 install: dotfiles brew-install brew-bundle use-modern-bash vscode-config vscode-extensions
 
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/dot/%
-	ln -sFi $< $@
+	ln -si $< $@
 
 $(DOTCONFIG_FILES): $(addprefix ${HOME}/.config/, %) : ${PWD}/dotconfig/%
-	ln -sFi $< $@
+	ln -si $< $@
 
 use-modern-bash:  ## Install recent version of bash and use instead of macos catalina's zsh
 	@echo "Trusting bash 5 to use as shell, press enter to continue"; read
