@@ -1,6 +1,8 @@
 [user]
     name = Matthew Meshulam
-    email = meshu003@umn.edu
+    email = matt@meshul.am
+[pull]
+    ff = only
 [push]
     default = simple
 [filter "media"]
@@ -36,20 +38,17 @@
     po  = push origin HEAD
     yolo= !"git add -A && git commit --amend && git push -f origin head"
 
-
-
-
 [apply]
   whitespace = nowarn
 [web]
   browser = open
-[include]
-  path = ~/.gituser
 
 [pager]
   branch = cat
-[pull]
-	ff = only
+
 [init]
 	defaultBranch = main
 
+# Local overrides
+[include]
+  path = ~/.gitconfig.local

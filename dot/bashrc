@@ -82,6 +82,8 @@ PS1+="\[${cyan}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
 
 ## Command history
+# append to the history file, don't overwrite it
+shopt -s histappend
 # Append and reload new command history at every prompt
 #PROMPT_COMMAND="history -a ; history -n ; $PROMPT_COMMAND"
 HISTSIZE=10000
