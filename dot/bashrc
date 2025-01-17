@@ -11,18 +11,15 @@ if [[ $(uname) == "Darwin" ]] ; then
 	export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 	export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 	export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
+	export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fi
 
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.npm-packages/bin:$HOME/go/bin"
+export PATH="$PATH:$HOME/dotfiles/bin"
 
 export PAGER="less"
 # Use vim as default editor
 export EDITOR=vim
-
-if [[ $(uname) == "Darwin" ]] ; then
-    # export JAVA_HOME=/Library/Java/JavaVirtualMachines/current/Contents/Home
-    export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
-fi
 
 if command -v asdf &>/dev/null ; then
   . "$(brew --prefix asdf)/libexec/asdf.sh"
