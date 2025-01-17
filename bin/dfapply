@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# symlink dotfiles into place, and make other changes in the host system
+# options:
+#   --force: blow away local state without prompting
+
+cd ~/dotfiles
+make dotfiles

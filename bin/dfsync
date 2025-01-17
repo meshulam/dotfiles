@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Fetch from upstream, and prompt if there are local changes
+# usage: dfsync
+
+cd ~/dotfiles
+
+SHOULD_COMMIT=n
+
+LOCAL_CHANGES=`git status --porcelain`
+
+if [[ -n "$LOCAL_CHANGES" ]] ; then
+  echo "$LOCAL_CHANGES"
+  read -p "commit local changes? (y/n) " SHOULD_COMMIT
+fi
+
+if [[ $SHOULD_COMMIT =~ ^[Yy] ]] ; then
+  echo "committing!"
+  git commit -am "`hostname` changes `date -I`"
+fi
+
+git pull origin HEAD
+git push

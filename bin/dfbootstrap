@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Deploy dotfiles on the target host via rsync
+# usage: dfbootstrap [user@]host
+
+set -euo pipefail
+
+TARGET=$1
+
+rsync -a . $TARGET:~/dotfiles
+ssh $TARGET '~/dotfiles/bin/dfapply'
