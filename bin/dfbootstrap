@@ -7,5 +7,5 @@ set -euo pipefail
 
 TARGET=$1
 
-rsync -a . $TARGET:~/dotfiles
+rsync -a ~/dotfiles $TARGET:~
 ssh $TARGET '~/dotfiles/bin/dfapply'

@@ -1,5 +1,9 @@
 CFG_PATH="${HOME}/dotfiles"
 
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
 ##########################################
 # Darwin/Homebrew
 ##########################################
@@ -21,9 +25,9 @@ export PAGER="less"
 # Use vim as default editor
 export EDITOR=vim
 
-if command -v asdf &>/dev/null ; then
-  . "$(brew --prefix asdf)/libexec/asdf.sh"
-fi
+##########################################
+# Shims
+[ -x ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate bash)"
 
 if command -v jj &>/dev/null ; then
 	source <(jj util completion bash)
@@ -89,5 +93,4 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 source ${CFG_PATH}/shell/aliases.sh
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f ~/.bash.local ] && source ~/.bash.local
