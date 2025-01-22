@@ -1,0 +1,4 @@
+# Override identity in common .gitconfig
+[user]
+    name = Matthew Meshulam
+    email = matt@meshul.am

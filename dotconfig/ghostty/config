@@ -1,0 +1,15 @@
+keybind = opt+u=previous_tab
+keybind = opt+o=next_tab
+
+# opt+ijkl: move focus in splits
+keybind = opt+i=goto_split:top
+keybind = opt+k=goto_split:bottom
+keybind = opt+j=goto_split:left
+keybind = opt+l=goto_split:right
+
+# cmd+opt+ijkl: new split
+keybind = cmd+opt+k=new_split:down
+keybind = cmd+opt+i=new_split:up
+keybind = cmd+opt+l=new_split:right
+keybind = cmd+opt+j=new_split:left
+
