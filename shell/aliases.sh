@@ -12,6 +12,8 @@ alias be='bundle exec'
 
 alias so='source ~/.zshrc'
 
+alias sc='systemctl'
+
 # Finding stuff
 function ff {
   find . -name "*$**"
