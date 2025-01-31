@@ -1,3 +1,7 @@
+font-family = Iosevka Nerd Font
+font-size = 14
+font-synthetic-style = false
+
 keybind = opt+u=previous_tab
 keybind = opt+o=next_tab
 
