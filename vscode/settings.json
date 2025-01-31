@@ -6,8 +6,6 @@
   // Controls the delay in ms after which quick suggestions will show up
   "editor.quickSuggestionsDelay": 100,
   "editor.wordBasedSuggestions": "off",
-  // When enabled, will trim trailing whitespace when saving a file.
-  "files.trimTrailingWhitespace": true,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -150,7 +148,9 @@
   "remote.SSH.remotePlatform": {
     "msi-vscode": "linux",
     "snow.msi.umn.edu": "linux",
-    "snow-vscode": "linux"
+    "snow-vscode": "linux",
+    "gonzo": "linux",
+    "radar-vscode": "linux"
   },
   "git.ignoreLegacyWarning": true,
   "gitlens.remotes": [
