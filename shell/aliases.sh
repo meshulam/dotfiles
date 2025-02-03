@@ -13,6 +13,8 @@ alias be='bundle exec'
 alias so='source ~/.zshrc'
 
 alias sc='systemctl'
+alias ssc='sudo systemctl'
+alias sjc='sudo journalctl'
 
 # Finding stuff
 function ff {
