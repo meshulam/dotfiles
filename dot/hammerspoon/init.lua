@@ -1,7 +1,22 @@
-hs.hotkey.bind({"ctrl", "alt"}, "r", nil, function(e)
-    print("Reloading Hammerspoon Config")
-    hs.reload()
+local hyper = {"cmd", "alt", "ctrl", "shift"}
+
+-- application hotkeys
+hs.hotkey.bind(hyper, "a", nil, function(e)
+  hs.application.launchOrFocus("Obsidian")
 end)
+hs.hotkey.bind(hyper, "s", nil, function(e)
+  hs.application.launchOrFocus("Spotify")
+end)
+hs.hotkey.bind(hyper, "g", nil, function(e)
+  hs.application.launchOrFocus("Ghostty")
+end)
+hs.hotkey.bind(hyper, "v", nil, function(e)
+  hs.application.launchOrFocus("Visual Studio Code")
+end)
+hs.hotkey.bind(hyper, "c", nil, function(e)
+  hs.application.launchOrFocus("Google Chrome")
+end)
+
 
 
 hs.hotkey.bind({"cmd", "alt"}, "v", nil, function(e)
