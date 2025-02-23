@@ -19,7 +19,7 @@ if [[ $(uname) == "Darwin" ]] ; then
 	export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 fi
 
-export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$HOME/.local/bin:$HOME/dotfiles/bin:$PATH"
 
 export PAGER="less"
 # Use vim as default editor
@@ -27,7 +27,8 @@ export EDITOR=vim
 
 ##########################################
 # Shims
-[ -x ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate bash)"
+command -v mise 2>&1 >/dev/null && eval "$(mise activate bash)"
+#[ -x ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate bash)"
 
 if command -v jj &>/dev/null ; then
 	source <(jj util completion bash)

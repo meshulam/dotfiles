@@ -203,5 +203,8 @@
     }
   ],
   "redhat.telemetry.enabled": false,
-  "terminal.external.osxExec": "Ghostty.app"
+  "terminal.external.osxExec": "Ghostty.app",
+  "editor.fontFamily": "'Iosevka Nerd Font', Monaco, 'Courier New', monospace",
+  "editor.copyWithSyntaxHighlighting": false,
+  "files.trimTrailingWhitespace": true
 }

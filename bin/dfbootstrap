@@ -9,3 +9,6 @@ TARGET=$1
 
 rsync -a ~/dotfiles $TARGET:~
 ssh $TARGET '~/dotfiles/bin/dfapply'
+
+# Copy terminfo to remote host
+infocmp -x | ssh $TARGET -- tic -x -
