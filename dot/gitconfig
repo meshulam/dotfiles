@@ -1,54 +1,73 @@
 [user]
-    name = Matthew Meshulam
-    email = matt@meshul.am
-[pull]
-    ff = only
-[push]
-    default = simple
-[filter "media"]
-    clean = git-media-clean %f
-    smudge = git-media-smudge %f
+	name = Matthew Meshulam
+	email = matt@meshul.am
+
 [url "ssh://git@heroku.com/"]
-    insteadOf = https://git.heroku.com/
+	insteadOf = https://git.heroku.com/
 [url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
-[color]
-    diff = auto
-    status = auto
-    branch = auto
+	insteadOf = https://github.com/
 [alias]
-    a   = add
-    aa  = add --all
-    # Pretty list branches
-    b   = for-each-ref --sort='-authordate' --format='%(align:13)%(authordate:relative)%(end)%(HEAD)%(refname:strip=2) %(upstream:trackshort)' refs/heads
-    c   = commit --verbose
-    cam = commit -a -m
-    co  = checkout
-    cob = checkout -b
-    conflicts   = diff --diff-filter=U --name-status
-    d   = diff
-    dc  = diff 'HEAD~'      # Diff of the last commit
-    l   = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset%n    %s'
-    ll  = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset %s' --numstat
-    lg  = log --graph --pretty=format:'%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
-    pu  = pull --rebase
-    psh = push
-    r   = remote -v
-    s   = status -sb
-    po  = push origin HEAD
-    yolo= !"git add -A && git commit --amend && git push -f origin head"
+	a   = add
+	aa  = add --all
+	# Pretty list branches
+	b   = for-each-ref --sort='-authordate' --format='%(align:13)%(authordate:relative)%(end)%(HEAD)%(refname:strip=2) %(upstream:trackshort)' refs/heads
+	c   = commit --verbose
+	cam = commit -a -m
+	co  = checkout
+	cob = checkout -b
+	conflicts   = diff --diff-filter=U --name-status
+	d   = diff
+	dc  = diff 'HEAD~'      # Diff of the last commit
+	l   = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset%n    %s'
+	ll  = log --pretty=format:'%C(yellow)%h%Creset - %Cgreen%ar%Creset - %Cblue%ae%Cred%d%Creset %s' --numstat
+	lg  = log --graph --pretty=format:'%Cred%h%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit
+	pu  = pull --rebase
+	psh = push
+	r   = remote -v
+	s   = status -sb
+	po  = push origin HEAD
+	yolo= !"git add -A && git commit --amend && git push -f origin head"
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 
 [apply]
-  whitespace = nowarn
-[web]
-  browser = open
-
-[pager]
-  branch = cat
-
+	whitespace = nowarn
+[branch]
+	sort = -committerdate
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[column]
+	ui = auto
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
 [init]
 	defaultBranch = main
+[pager]
+	branch = cat
+[pull]
+	ff = only
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[tag]
+	sort = version:refname
+[web]
+	browser = open
 
 # Local overrides
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
