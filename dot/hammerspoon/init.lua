@@ -17,7 +17,13 @@ hs.hotkey.bind(hyper, "c", nil, function(e)
   hs.application.launchOrFocus("Google Chrome")
 end)
 
-
+-- type current date
+hs.hotkey.bind(hyper, "d", nil, function(e)
+  hs.eventtap.keyStrokes(os.date("%Y-%m-%d"))
+end)
+hs.hotkey.bind(hyper, "t", nil, function(e)
+  hs.eventtap.keyStrokes(os.date("%Y-%m-%d %H:%M:%S"))
+end)
 
 hs.hotkey.bind({"cmd", "alt"}, "v", nil, function(e)
   local p = hs.pasteboard.readAllData()
