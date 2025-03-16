@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# symlink dotfiles into place, and make other changes in the host system
+# options:
+#   --force: blow away local state without prompting
+set -euo pipefail
+
+ln -sf ./dotfiles/dot/ansible.cfg ~/.ansible.cfg
+ln -sf ./dotfiles/dot/bash_profile ~/.bash_profile
+ln -sf ./dotfiles/dot/bashrc ~/.bashrc
+ln -sf ./dotfiles/dot/gitconfig ~/.gitconfig
+ln -sf ./dotfiles/dot/gitignore ~/.gitignore
+ln -sf ./dotfiles/dot/tmux.conf ~/.tmux.conf
+ln -sf ./dotfiles/dot/vimrc ~/.vimrc
+
+[[ -L ~/.vim ]] && rm ~/.vim
+ln -sf ./dotfiles/dot/vim ~/.vim
+
+if command -v ghostty &>/dev/null ; then
+  mkdir -p ~/.config/ghostty
+  ln -sf ../../dotfiles/ghostty_config ~/.config/ghostty/config
+fi
+
+if [[ $(uname) == "Darwin" ]] ; then
+  [[ -L ~/.hammerspoon ]] && rm ~/.hammerspoon
+  ln -s ./dotfiles/hammerspoon ~/.hammerspoon
+fi
