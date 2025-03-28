@@ -13,8 +13,6 @@
 	b   = for-each-ref --sort='-authordate' --format='%(align:13)%(authordate:relative)%(end)%(HEAD)%(refname:strip=2) %(upstream:trackshort)' refs/heads
 	c   = commit --verbose
 	cam = commit -a -m
-	co  = checkout
-	cob = checkout -b
 	conflicts   = diff --diff-filter=U --name-status
 	d   = diff
 	dc  = diff 'HEAD~'      # Diff of the last commit
@@ -25,6 +23,7 @@
 	psh = push
 	r   = remote -v
 	s   = status -sb
+	sw  = switch
 	po  = push origin HEAD
 	yolo= !"git add -A && git commit --amend && git push -f origin head"
 
