@@ -6,19 +6,19 @@ set -euo pipefail
 
 cd ~/dotfiles
 
-SHOULD_COMMIT=n
+git pull origin HEAD --autostash
 
 LOCAL_CHANGES=`git status --porcelain`
 
+COMMIT_MSG=''
+
 if [[ -n "$LOCAL_CHANGES" ]] ; then
   echo "$LOCAL_CHANGES"
-  read -p "commit local changes? (y/n) " SHOULD_COMMIT
+  read -p "commit message (leave blank to skip) " COMMIT_MSG
 fi
 
-if [[ $SHOULD_COMMIT =~ ^[Yy] ]] ; then
-  echo "committing!"
-  git commit -am "`hostname` changes `date -I`"
+if [[ -n "$COMMIT_MSG" ]] ; then
+  echo "committing and pushing!"
+  git commit -am "$COMMIT_MSG"
+  git push
 fi
-
-git pull origin HEAD
-git push
