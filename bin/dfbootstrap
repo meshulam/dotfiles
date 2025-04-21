@@ -8,7 +8,7 @@ set -euo pipefail
 TARGET=$1
 
 rsync -a ~/dotfiles $TARGET:~
-ssh $TARGET '~/dotfiles/bin/install'
+ssh $TARGET '~/dotfiles/bin/dfinstall'
 
 # Copy terminfo to remote host
 infocmp -x | ssh $TARGET -- tic -x -
